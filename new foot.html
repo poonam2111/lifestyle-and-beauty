@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+    /* new */
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .product-scroll-section {
+      padding: 2rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+      /* Hide scrollbar on some browsers */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: #fff;
+      min-width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 1rem;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 0.5rem;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+    .product-price {
+      font-size: 0.9rem;
+      color: #198754;
+      margin: 0;
+    }
+    /* new end */
+  </style>
+
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- new -->
+  <section class="product-scroll-section" style="background-color: rgb(249, 239, 226);">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="scroll-container">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.oHzRAXDwIKsrPw474C474&o=5&pid=21.1&w=160&h=186&rs=1&qlt=100&dpr=1.3&o=2&c=8" alt="Foot Mask" />
+          </div>
+          <div class="product-name">Foot Mask</div>
+          <p class="product-price">₹299</p>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.vSLjKSg%2f%2b3oc1w474C474&o=5&pid=21.1&w=148&h=216&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Foot Cream" />
+          </div>
+          <div class="product-name">Foot Cream</div>
+          <p class="product-price">₹499</p>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.D6nmaJiy59Hnog474C474&o=5&pid=21.1&w=160&h=186&rs=1&qlt=100&dpr=1.3&o=2" alt="Foot Mask" />
+          </div>
+          <div class="product-name">Foot Mask</div>
+          <p class="product-price">₹399</p>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.YJUN1rpdNDbfYQ474C474&o=5&pid=21.1&w=148&h=253&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Foot Cream" />
+          </div>
+          <div class="product-name">Foot Cream</div>
+          <p class="product-price">₹199</p>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+ <!-- new end -->
+
+<!--CARDS-->
+<div class="explore-section" id="footmask">
+  <div class="explore-title">EXPLORE OUR LATEST FOOT MASK</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1133029/GnOUHKjh8aK-1133029_1.jpg" alt="FOOT MASK" />
+      <div class="product-name">Innisfree Special Care Foot Mask (20 ml)</div>
+      <div class="product-price">Rs. 190.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 190.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1116030/6v6VtV2LUP-8904378102743_1.jpg" alt="FOOT MASK" />
+      <div class="product-name">O3+ Pedi Bright Foot Socks Cream Mask (40g)</div>
+      <div class="product-price">Rs. 199.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 616.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/946081/lrMhOdY1Gl-946081_1.jpg" alt="FOOT MASK" />
+      <div class="product-name">The Face Shop Smile Foot Peeling Jelly Mask (40ml)</div>
+      <div class="product-price">Rs. 610.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 610.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/934817/vos3tRqiF-934817_1.jpg" alt="FOOT MASK" />
+      <div class="product-name">The Face Shop Smile Foot Mask</div>
+      <div class="product-price">Rs. 382.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 382.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/e/3ee6006852410005393_y1.jpg" alt="FOOT MASK" />
+      <div class="product-name">LuxaDerme Peeling & Exfoliating Foot Mask(40ml)</div>
+      <div class="product-price">Rs. 615.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 615.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/e/7e4d17e852410005379-1.jpg" alt="FOOT MASK" />
+      <div class="product-name">LuxaDerme Deep Moisturizing - Foot Hydration Socks(15ml)</div>
+      <div class="product-price">Rs. 270.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 270.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/20059847a.webp" alt="FOOT MASK" />
+      <div class="product-name">FURR Moisturization & Hydration Foot Mask</div>
+      <div class="product-price">Rs. 399.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 399.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://onemg.gumlet.io/l_watermark_346,w_120,h_120/a_ignore,w_120,h_120,c_fit,q_auto,f_auto/ifarlqc2f1fgcick1ypx.jpg" alt="FOOT MASK" />
+      <div class="product-name">Skin Fx Foot Mask Nourishing & Smoothening (16gm)</div>
+      <div class="product-price">Rs. 299.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 299.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="footcream">
+  <div class="explore-title">EXPLORE OUR LATEST FOOT CREAM</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1147145/rN_ANYqGqt-1147145_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">Fixderma Foot Cream for Dry and Cracked Feet, Moisturizes, Soothes and Repair Creacked Feet (150ml)</div>
+      <div class="product-price">Rs. 391.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 391.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/l-occitane/989881/0/_RWduzpXiU-_v7oZgIrEF-989881_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">L'occitane Shea Butter Foot Cream - (30ml)</div>
+      <div class="product-price">Rs. 1,050.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,050.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/926569/PGYpSBohT-926569_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">Vaadi Herbals Clove Oil & Sandalwood Foot Cream (500g)</div>
+      <div class="product-price">Rs. 460.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 460.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1130762/X8oUt6fx9j-1130762_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">THE LOVE CO. Foot Fix Tea Tree Oil Foot Cream (100g)</div>
+      <div class="product-price">Rs. 314.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 314.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1147144/GLOAMk-L_V-1147144_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">Fixderma Foobetik Cream, Foot cream, Heel Repair, for Calloused, or Chapped Skin, Paraben Free (50g)</div>
+      <div class="product-price">Rs. 292.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 292.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1103965/P5DlP0aOYh-1103965_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">The Body Shop Peppermint Intensive Foot Rescue (100ml)</div>
+      <div class="product-price">Rs. 1,145.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,145.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1119163/yY-QvwYkRK-8907833006358_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">Fabessentials by Fabindia Avocado Lychee Foot Cream Enriched With Shea Butter & Jojoba Oil (100g)</div>
+      <div class="product-price">Rs. 337.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 337.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1143898/5VxtSvc-l-1143898_1.jpg" alt="FOOT CREAM" />
+      <div class="product-name">Dream. Immerse. Play. Hand & Foot Cream The Garden Stroll Collection (30 g)</div>
+      <div class="product-price">Rs. 345.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 345.00</div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

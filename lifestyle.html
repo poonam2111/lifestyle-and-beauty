@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeStyle</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* navbar */
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+/* nav end */
+/* carousell */
+    #carousel1 {
+      height: 500px;
+    }
+
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .heading {
+      color: rgb(53, 48, 106);
+    }
+
+    .carousel-caption h5 {
+      font-size: 2rem;
+    }
+
+    .carousel-caption p {
+      font-size: 1.2rem;
+    }
+/* end carousel */
+/* card */
+.card {
+  min-height: 450px; /* Or any height you prefer */
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .card-img-container img {
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card-img-container img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .card-img-container:hover img.img-hover {
+    opacity: 1;
+  }
+
+  .card-img-container:hover img.img-main {
+    opacity: 0;
+  }
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+/* cards end */
+/* video banner */
+ .video-banner {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-half {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.video-half video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: orange;
+}
+
+.video-overlay h1 {
+  font-size: 80px;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.video-overlay h2 {
+  font-size: 40px;
+}
+
+.video-overlay p {
+  font-size: 20px;
+}
+
+.video-overlay button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.video-overlay button:hover {
+  background: #444;
+}
+
+@media (max-width: 768px) {
+  .video-banner {
+    flex-direction: column;
+  }
+
+  .video-half {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .video-overlay h1 {
+    font-size: 50px;
+  }
+
+  .video-overlay h2 {
+    font-size: 28px;
+  }
+
+  .video-overlay p {
+    font-size: 16px;
+  }
+}
+/* end video */
+/* brand card */
+.brand-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.brand-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px; /* You can adjust this height as needed */
+  margin-bottom: 20px; /* bottom spacing */
+}
+
+
+.brand-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.brand-img {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.brand-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-info {
+  padding: 15px 10px;
+  background-color: #fff;
+  transition: transform 0.4s ease;
+}
+
+.brand-card:hover .brand-info {
+  transform: translateY(-10px);
+}
+/* end card */
+/* carousel video*/
+.carousel-item {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-item video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
+    }
+
+ .carousel-caption {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-caption h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    #uniqueVideoSlider.carousel-caption p {
+      font-size: 1.25rem;
+      font-style: italic;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+/* carousel end video */
+    /* foot */
+   /* Forcefully remove bottom space below footwear section */
+.no-bottom-space {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#footwearCarousel,
+#footwearCarousel .carousel-inner,
+#footwearCarousel .carousel-item,
+#footwearCarousel .row {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#footwearCarousel .card {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+  /* Optional: improve card alignment on small screens */
+  @media (max-width: 768px) {
+    .footwear-section .row-cols-md-4 > .col {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+.card-img-top {
+    transition: transform 0.3s ease;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+
+  .carousel-item .card {
+    height: 100%;
+}
+
+  .text-warning {
+    font-size: 1rem;
+  }
+  /* end foot */
+  </style>
+<div id="thankYouMsg" style="display:none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #3e8e4d; color: white; padding: 12px 24px; border-radius: 8px; z-index: 9999;">
+  Thank you for purchasing!
+</div>
+<script>
+  function showThankYou() {
+    const msg = document.getElementById("thankYouMsg");
+    msg.style.display = "block";
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 2500); // message hides after 2.5 seconds
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const buyButtons = document.querySelectorAll(".btn-dark");
+    buyButtons.forEach(function (button) {
+      button.addEventListener("click", showThankYou);
+    });
+  });
+</script>
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar bg-white shadow-lg">
+  <div class="cart-header d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+    <h5 class="m-0">🛒 Your Cart</h5>
+    <button class="btn-close" onclick="closeCartSidebar()"></button>
+  </div>
+  <div class="cart-body p-3">
+    <ul id="cartItems" class="list-unstyled mb-0">
+      <!-- Items will appear here -->
+    </ul>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCartSidebar()"></div>
+<style>
+  .cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  z-index: 1050;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1040;
+  display: none;
+}
+
+.cart-overlay.show {
+  display: block;
+}
+
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const card = button.closest(".card");
+        const title = card.querySelector(".card-title").innerText;
+        const price = card.querySelector(".text-primary").innerText;
+
+        addToCart(title, price);
+        openCartSidebar();
+      });
+    });
+  });
+
+  function addToCart(title, price) {
+    const cartItems = document.getElementById("cartItems");
+
+    const li = document.createElement("li");
+    li.classList.add("mb-2", "border-bottom", "pb-2");
+    li.innerHTML = `<strong>${title}</strong><br><span class="text-muted">${price}</span>`;
+
+    cartItems.appendChild(li);
+  }
+
+  function openCartSidebar() {
+    document.getElementById("cartSidebar").classList.add("open");
+    document.getElementById("cartOverlay").classList.add("show");
+  }
+
+  function closeCartSidebar() {
+    document.getElementById("cartSidebar").classList.remove("open");
+    document.getElementById("cartOverlay").classList.remove("show");
+  }
+</script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Slider -->
+  <div class="py-5" style="background-color:#f3d9d9;" id="venue">
+    <div class="row m-0" style="background-color: rgb(240, 166, 56);">
+      <div class="p-4 col-md-6 align-self-center text-color">
+        <p class="m-0" style="color: rgb(167, 42, 11);">Feel comfortable, and purchase items</p>
+        <h2 class="heading">Discover the products</h2>
+        <p class="my-4">“The best fashion advice I'd say would be just to do what makes you comfortable and what makes
+          you feel cute, and that's how you're gonna look your best 'cause when you feel your best, everybody else can
+          feel it, too.” - Ariana Grande</p>
+        <a href="new clothing.html" class="btn mb-3 p-2 btn-light">View the gallery</a>
+      </div>
+      <div class="p-0 col-md-6">
+        <!-- ✅ Full Width Carousel -->
+        <div id="carousel1" class="carousel slide w-100" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://image.hm.com/content/dam/global_campaigns/season_02/women/startpage-category-entries/wk28/Women-startpage-wk28-Blouses-CE-wk28.jpg?imwidth=1536"
+                class="d-block w-100" alt="Slide 1">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Blouses</h5>
+                <p>“Fashion is instant language.”</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://image.hm.com/content/dam/global_campaigns/season_02/women/startpage-category-entries/wk28/WS32L-Women-startpage-wk28-4x5.jpg?imwidth=4800"
+                class="d-block w-100" alt="Slide 2">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Dresses</h5>
+                <p>“Style is knowing who you are and owning it.”</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.urbndata.com/is/image/Anthropologie/4130344600141_038_b14?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=640"
+                class="d-block w-100" alt="Slide 3">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Beach One Piece</h5>
+                <p>“Dress like you’re already famous.”</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end slider -->
+
+  <!-- cards -->
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+         <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/76/62/76628efe80ad2d8f527fa133f31ce303651b2e2a.jpg?imwidth=382" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/88/55/8855f075c0adf1fa5b1a3877c36f30afad9f5579.jpg?imwidth=396" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Elegant Summer Dress</h5>
+          <p class="card-text text-muted">Lightweight, breathable cotton perfect for summer outings.</p>
+          <p class="fw-bold text-primary">₹1,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/0e/48/0e489d3a235f98a38cf335d9bd7c39cb7438b56d.jpg?imwidth=2160" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/4e/14/4e147614faffdf58a531c5d190d59cd634f07bfd.jpg?imwidth=1536" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Stylish Denim Jacket</h5>
+          <p class="card-text text-muted">Classic fit denim jacket with a modern twist.</p>
+          <p class="fw-bold text-primary">₹2,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/8c/1e/8c1eaf22e8145a48883e0c8c67985a63860f09b8.jpg?imwidth=1260" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/5f/3b/5f3b74830b1972150fce8bcb22b11573cd5cad5b.jpg?imwidth=1260" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Graphic Tee</h5>
+          <p class="card-text text-muted">Comfortable cotton tee with a vibrant graphic print.</p>
+          <p class="fw-bold text-primary">₹999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/fb/b8/fbb88df421d6530508f7452f0f7e2ee9afff6343.jpg?imwidth=1260" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/84/f5/84f55b9c83f71fb08efda43613b0b786d1c14c68.jpg?imwidth=1260" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Satin Maxi Skirt</h5>
+          <p class="card-text text-muted">A versatile A-line skirt that flatters every figure.</p>
+          <p class="fw-bold text-primary">₹2,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 5 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/95/ec/95eca151ba3b660d6f0018cc5a5c6db657c34f63.jpg?imwidth=1260" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/d8/cd/d8cd291a6432063489148c9c23a08a0ac5a3c7b0.jpg?imwidth=1260" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Cotton poplin playsuit</h5>
+          <p class="card-text text-muted">Feminine, fluid, and fabulous — this jumpsuit moves with you.</p>
+          <p class="fw-bold text-primary">₹2,299</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 6 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+         <a href="new clothing.html"> <img src="https://www.thekoreanfashion.com/cdn/shop/files/O1CN01sXn8jC1Z3i20vL6eR_26396231.jpg?v=1735147200&width=1800" class="card-img-top img-main" alt="Front Image">
+          <img src="https://www.thekoreanfashion.com/cdn/shop/files/fb-feed_f01cbf01.webp?v=1743977611&width=1800" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Stylish Shirts</h5>
+          <p class="card-text text-muted">A chic and flowy silhouette meets everyday comfort.</p>
+          <p class="fw-bold text-primary">₹2,900</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 7 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+         <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/a0/bc/a0bc61cbfe7839279463f651be57afc54a997ad1.jpg?imwidth=1260" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/1c/7e/1c7e4134e226bf6bc48a266729eb502dc7cf4212.jpg?imwidth=2160" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Jeans</h5>
+          <p class="card-text text-muted">Perfect for pairing with crop tops, blouses, or oversized tees.</p>
+          <p class="fw-bold text-primary">₹2,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 8 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <a href="new clothing.html"><img src="https://image.hm.com/assets/hm/9a/64/9a64d91e45511f8698cc76d01a21f84b08febfd0.jpg?imwidth=1260" class="card-img-top img-main" alt="Front Image">
+          <img src="https://image.hm.com/assets/hm/dc/6d/dc6df21162220e174e4556174e6253d9c595ef95.jpg?imwidth=1260" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Cropped zip-through hoodie</h5>
+          <p class="card-text text-muted">Stay cozy and stylish in this cropped zip-through hoodie.</p>
+          <p class="fw-bold text-primary">₹999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- card end -->
+
+<!-- vedio -->
+ <section class="video-banner">
+  <!-- Left 50% -->
+  <div class="video-half">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2025-07-15 at 23.08.10_aeca339a.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Right 50% -->
+  <div class="video-half">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2025-07-15 at 23.20.12_4f74c69a.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Overlay -->
+  <div class="video-overlay">
+    <h1>Sale</h1>
+    <h2>UP TO 40% OFF</h2>
+    <p>ON WOMEN'S POLO</p>
+  <a href="new clothing.html"> <button>Shop Now</button></a>
+  </div>
+</section>
+  <!-- end video -->
+
+ <!-- BAGS Heading -->
+<div class="text-center my-5">
+  <h2 style="font-weight: 800; letter-spacing: 1px;">BAGS</h2>
+</div>
+
+<!-- Brands Heading with horizontal lines -->
+<div class="d-flex align-items-center justify-content-center mb-1">
+  <div style="flex: 1; height: 2px; background-color: #ccc;"></div>
+  <h4 class="mx-3 mb-0">Brands related to your search</h4>
+  <div style="flex: 1; height: 2px; background-color: #ccc;"></div>
+</div>
+<p class="text-center text-muted mb-4">Sponsored <i class="bi bi-info-circle"></i></p>
+
+<!-- Brand Cards Row -->
+<div class="container" style="margin-bottom: 40px;">
+  <div class="row justify-content-center g-4 align-items-stretch">
+
+
+    <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="brand-card">
+        <div class="brand-img">
+          <a href="new bags.html"><img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/4cdbb0ee-d8da-4fd0-9803-ad5f53df386e._CR0,0,1200,628_SX920_CB1169409_QL70_.jpg" alt="Zouk" />
+        </div>
+        <div class="brand-info">
+           <img src="idN_Z-UvNX_1752606471870.png" alt="Zouk Logo" style="max-width: 120px;"></a>
+          <p class="text-muted">Proudly Indian Handcrafted Range Of Bags</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="brand-card">
+        <div class="brand-img">
+          <a href="new bags.html"><img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/ecfe4e3c-8f61-4cbf-8ba9-029b581489ce._CR0,0,1200,628_SX920_CB1169409_QL70_.jpg" alt="Lavie Luxe" />
+        </div>
+        <div class="brand-info">
+         <img src="image.png" alt="Lavie Luxe Logo" style="max-width: 100px;"></a>
+          <p class="text-muted">Discover luxury in every stitch</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="brand-card">
+        <div class="brand-img">
+         <a href="new bags.html"><img src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/66a0a423-ae45-461c-93c5-a48e93b15034._CR0,0,1200,628_SX920_CB1169409_QL70_.jpg" alt="Lavie Signature" />
+        </div>
+        <div class="brand-info">
+          <img src="Screenshot 2025-07-16 004742.png" alt="Lavie Signature Logo" style="max-width: 100px;"></a>
+          <p class="text-muted">Discover in your style</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+ <!-- end -->
+
+ <!-- slider -->
+   <!-- Unique Video Slider -->
+  <div id="uniqueVideoSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <video autoplay muted loop playsinline>
+          <source src="WhatsApp Video 2025-07-16 at 17.52.42_3d1da2bc.mp4" type="video/mp4">
+        </video>
+        <div class="carousel-caption">
+          <h1>Luxury Redefined</h1>
+          <p>Where elegance meets motion</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+          <source src="WhatsApp Video 2025-07-16 at 17.52.42_a96b847a.mp4" type="video/mp4">
+        </video>
+        <div class="carousel-caption">
+          <h1>Style in Motion</h1>
+          <p>Live your moment in fashion</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+          <source src="WhatsApp Video 2025-07-16 at 17.52.42_5966fa9b.mp4" type="video/mp4">
+        </video>
+        <div class="carousel-caption">
+          <h1>Confidence in Every Frame</h1>
+          <p>Wear it. Own it.</p>
+        </div>
+      </div>
+
+            <!-- Slide 4 -->
+      <div class="carousel-item">
+        <video autoplay muted loop playsinline>
+          <source src="WhatsApp Video 2025-07-16 at 17.52.42_d1d050c7.mp4" type="video/mp4">
+        </video>
+        <div class="carousel-caption">
+          <h1>Every outfit deserves the perfect bag.</h1>
+          <p>Wear it. Own it.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#uniqueVideoSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon p-3" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#uniqueVideoSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon p-3" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- end -->
+
+  <!-- footware -->
+<div class="container pt-5 pb-0 footwear-section no-bottom-space" style="margin-bottom: 0 !important; padding-bottom: 0 !important;">
+
+
+<!-- Heading with horizontal line -->
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-uppercase position-relative d-inline-block">
+      Footwear Collection
+    </h2>
+    <hr class="mx-auto mt-2" style="width: 180px; height: 3px; background-color: #000; opacity: 0.9;">
+  </div>
+
+  <div id="footwearCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+     <a href="new footware.html"> <div class="carousel-item active" style="cursor: pointer;">
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+              <img src="https://m.media-amazon.com/images/I/51aeu7hreFL._AC_SR360,240_CB1169409_QL70_.jpg" class="card-img-top" alt="Urban Kicks">
+              <div class="card-body">
+                <h6 class="card-title">Urban Kicks</h6>
+                <p class="card-text">₹2,199</p>
+                <div class="text-warning mb-1">★★★★☆</div>
+                <p class="small text-muted">Modern sneakers for daily comfort.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+             <img src="https://m.media-amazon.com/images/I/61j5p8-wUrL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Coastal Slides">
+              <div class="card-body">
+                <h6 class="card-title">Coastal Slides</h6>
+                <p class="card-text">₹999</p>
+                <div class="text-warning mb-1">★★★☆☆</div>
+                <p class="small text-muted">Slides perfect for beach & lounge.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+             <img src="https://m.media-amazon.com/images/I/41IOKviLUuL._SY625_.jpg" class="card-img-top" alt="Loafers">
+              <div class="card-body">
+                <h6 class="card-title">Heritage Loafers</h6>
+                <p class="card-text">₹3,499</p>
+                <div class="text-warning mb-1">★★★★★</div>
+                <p class="small text-muted">Classic loafers with a luxe finish.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+             <img src="https://m.media-amazon.com/images/I/51dMU1SjudL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Heels">
+              <div class="card-body">
+                <h6 class="card-title">Velvet Nights</h6>
+                <p class="card-text">₹2,799</p>
+                <div class="text-warning mb-1">★★★★☆</div>
+                <p class="small text-muted">Glamorous heels for every evening.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></a>
+
+      <!-- Slide 2 -->
+      <a href="new footware.html"><div class="carousel-item" style="cursor: pointer;">
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+             <img src="https://m.media-amazon.com/images/I/81Enh0PFCiL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Boots">
+              <div class="card-body">
+                <h6 class="card-title">Rogue Boots</h6>
+                <p class="card-text">₹3,299</p>
+                <div class="text-warning mb-1">★★★★☆</div>
+                <p class="small text-muted">Bold and rugged boots for all terrains.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+              <img src="https://m.media-amazon.com/images/I/71z8k7hGkGL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Trainers">
+              <div class="card-body">
+                <h6 class="card-title">Retro Runners</h6>
+                <p class="card-text">₹2,499</p>
+                <div class="text-warning mb-1">★★★☆☆</div>
+                <p class="small text-muted">Chunky trainers in retro style.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+              <img src="https://m.media-amazon.com/images/I/41bsvACmUFL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Slip-ons">
+              <div class="card-body">
+                <h6 class="card-title">Canvas Slip-ons</h6>
+                <p class="card-text">₹1,799</p>
+                <div class="text-warning mb-1">★★★☆☆</div>
+                <p class="small text-muted">Breathable, casual and comfy.</p>
+              </div>
+            </div>
+          </div>
+        <div class="col mb-0">
+            <div class="card text-center shadow-sm h-50">
+            <img src="https://m.media-amazon.com/images/I/71EFN+Z92sL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Running Shoes">
+              <div class="card-body">
+                <h6 class="card-title">Speed Flex</h6>
+                <p class="card-text">₹2,999</p>
+                <div class="text-warning mb-1">★★★★★</div>
+                <p class="small text-muted">Lightweight runners for daily training.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></a>
+    </div>
+
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#footwearCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#footwearCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- end footware -->
+
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+
+    /* kit */
+     .kit-section {
+      padding: 2rem 1rem;
+    }
+
+    .kit-heading {
+      text-align: left;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: #333;
+      padding-left: 1rem;
+    }
+
+    .kit-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-behavior: smooth;
+      padding: 0 1rem 1rem;
+    }
+
+    .kit-scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .kit-scroll-container::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    .kit-card {
+      min-width: 280px;
+      height: 160px;
+      border-radius: 15px;
+      position: relative;
+      color: white;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .kit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .kit-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .kit-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .kit-info {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 2;
+    }
+
+    .kit-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .kit-sub {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    /* kit end */
+  </style>
+
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- kit -->
+   <section class="kit-section">
+    <h2 class="kit-heading">✨ Glow-Up Kits</h2>
+    <div class="kit-scroll-container">
+
+      <!-- Kit Card 1 -->
+      <div class="kit-card">
+        <img src="https://aqualogica.in/cdn/shop/files/1_712251b4-dcb3-40c4-87aa-83d79a539f1a.jpg?v=1720786270&width=1445" alt="Glow Kit 1" />
+        <div class="kit-info">
+          <p class="kit-title">Daily Glow Kit</p>
+          <p class="kit-sub">Cleanser • Serum • Sunscreen</p>
+        </div>
+      </div>
+
+      <!-- Kit Card 2 -->
+      <div class="kit-card">
+        <img src="https://www.sephora.com.tr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dw8bedc7dd/images/hi-res/alternates/PID_alternate5/PID_alternate5_1172/P10033701_5.jpg" alt="Glow Kit 2" />
+        <div class="kit-info">
+          <p class="kit-title">Night Repair Kit</p>
+          <p class="kit-sub">Cleanse • Mask • Moisturize</p>
+        </div>
+      </div>
+
+      <!-- Kit Card 3 -->
+      <div class="kit-card">
+        <img src="https://media6.ppl-media.com/tr:h-750,w-750,c-at_max,dpr-2,q-40/static/img/product/372579/plum-bodycare-kit-hawaiian-rumba-body-mist-150ml-hawaiian-rumba-hand-cream-50g-hawaiian-rumba-shower-gel-240ml-hawaiian-rumba-perfume-15ml_1_display_1704866583_eda7bb5a.jpg" alt="Glow Kit 3" />
+        <div class="kit-info">
+          <p class="kit-title">Monsoon Rescue</p>
+          <p class="kit-sub">Anti-Acne • Barrier Care</p>
+        </div>
+      </div>
+
+      <!-- Kit Card 4 -->
+      <div class="kit-card">
+        <img src="https://th.bing.com/th/id/R.4fa24efb5d827edd6f80e4bb80219b36?rik=ctQhsMzjGoqbqQ&riu=http%3a%2f%2fwww.herbneden.com%2fcdn%2fshop%2fproducts%2fsensitive_box_w_products.jpg%3fv%3d1681397837&ehk=sZow7%2fteeIqjoirrgo6o4Jt%2fxGWlpJjLeMtCqSuXFzU%3d&risl=&pid=ImgRaw&r=0" alt="Glow Kit 4" />
+        <div class="kit-info">
+          <p class="kit-title">Wedding Radiance</p>
+          <p class="kit-sub">Prep • Glow • Hydrate</p>
+        </div>
+      </div>
+
+      <!-- Kit Card 5 -->
+      <div class="kit-card">
+        <img src="https://a.cdnsbn.com/images/products/l/34827329214.jpg" alt="Glow Kit 5" />
+        <div class="kit-info">
+          <p class="kit-title">Vitamin C Boost</p>
+          <p class="kit-sub">Brighten • Even Tone</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+   <!-- kit end -->
+<!--CARDS-->
+<div class="explore-section" id="bodywash">
+  <div class="explore-title">EXPLORE OUR LATEST BODY WASH</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1018311/NU42Xa8THZQ-1018311_2.jpg" alt="BODY WASH" />
+      <div class="product-name">Dove Gentle Exfoliating Nourishing Body Wash (250ml)</div>
+      <div class="product-price">Rs. 205.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 205.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:494/Tira_Combos/mCaffeine/1112800_Combo_9/1112800_Combo_9-1.jpeg" alt="BODY WASH" />
+      <div class="product-name">mCaffeine Coffee Cocoa Body Wash for Women & Men Glowing Skin Refreshing Fragrance Combo</div>
+      <div class="product-price">Rs. 474.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 474.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1128356/gQzpkvtiPs-1128356_1.jpg" alt="BODY WASH" />
+      <div class="product-name">Be Bodywise 5% Niacinamide Body Wash For Glowing & Hydrated Skin (250ml)</div>
+      <div class="product-price">Rs. 347.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 347.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/pears/1013527/0/ncdvJdtx9K-lNaHL9hghd-1013527_1.jpg" alt="BODY WASH" />
+      <div class="product-name">Pears Pure and Gentle Body Wash with Loofah (250ml)</div>
+      <div class="product-price">Rs. d140.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 391.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1157808/Jx-H5rs9u-1157808_1.jpg" alt="BODY WASH" />
+      <div class="product-name">Plum Body lovin Vanilla Caramello Body Wash Warm Caramel SLS Free Body Wash (240 ml)</div>
+      <div class="product-price">Rs. 323.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 323.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/409753/7gMIakEpzr-409753-1.jpg" alt="BODY WASH" />
+      <div class="product-name">Nivea Power Fruit Fresh Body Wash And Shower Gel (250ml)</div>
+      <div class="product-price">Rs. 165.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 165.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/nivea/895175/0/UXloydIzTU-4S5T3NlzEI-8904256007979_1.jpg" alt="BODY WASH" />
+      <div class="product-name">Nivea Water Lily & Oil Body Wash And Shower Gel (125ml)</div>
+      <div class="product-price">Rs. 128.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 128.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1014311/Cw841C_oh-1014311_1.jpg" alt="BODY WASH" />
+      <div class="product-name">Pears Naturale Nourishing Coconut Water Body Wash - (250ml)</div>
+      <div class="product-price">Rs. 199.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 199.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="bodylotion">
+  <div class="explore-title">EXPLORE OUR LATEST BODY LOTION</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1111366/ucZQoExoe-1111366_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">Vaseline Gluta Hya Dewy Radiance Serum-In-Lotion (200ml)</div>
+      <div class="product-price">Rs. 297.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 297.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/udo3WGSmK-Plum-BodyLovin-Vanilla-Caramello-Body-Lotion-with-Cocoa-Butter-and-Vitamin-B5-(400ml).jpeg" alt="BODY LOTION" />
+      <div class="product-name">Plum BodyLovin' Vanilla Caramello Body Lotion with Cocoa Butter & Vitamin B5 (400ml)</div>
+      <div class="product-price">Rs. 403.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 403.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1157809/43qZV2_NbU-1157809_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">Plum Body lovin Marshmallow Melt Body Lotion with Shea Butter & Vitamin B5 Non Greasy (400 ml)</div>
+      <div class="product-price">Rs. 403.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 403.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1086248/q8F_H8pnRx-1086248_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">WishCare 10% AHA + 1% BHA Body Lotion With Niacinamide (200ml)</div>
+      <div class="product-price">Rs. 404.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 404.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1018150/SBmRNZTkUU-1018150-1.jpg" alt="BODY LOTION" />
+      <div class="product-name">Nivea Body Milk Nourishing Body Lotion (600ml)</div>
+      <div class="product-price">Rs. 570.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 570.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1086250/6KP9CVwdTo-1086250_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">WishCare SPF 50 Sunscreen Body Lotion - Broad Spectrum For Men & Women (200 ml)</div>
+      <div class="product-price">Rs. 404.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 404.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1157999/VKrh6v4ei9C-1157999_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">Mamaearth Rice Water Hydrating Body Lotion For Dewy Glass Skin (400 ml)</div>
+      <div class="product-price">Rs. 398.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 398.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/vaseline/1013646/0/wdxQF9BHJU-Jc5i5VZXVz-pkCVYVYxqY-rXGUE0epW6h-1013646_1.jpg" alt="BODY LOTION" />
+      <div class="product-name">Vaseline Sun + Pollution Protection SPF 30 Body Lotion - (400ml)</div>
+      <div class="product-price">Rs. 468.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 468.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="bodymist">
+  <div class="explore-title">EXPLORE OUR LATEST BODY MIST</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1157889/xHMXTBxTp-1157889_1.jpg" alt="BODY MIST" />
+      <div class="product-name">Aqualogica Refresh+ On The Go Perfume Body Mist Set for Women</div>
+      <div class="product-price">Rs. 509.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 509.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1108175/ZvwqHQEWQ-1108175_1.jpg" alt="BODY MIST" />
+      <div class="product-name">Plum Bodylovin Vanilla Vibes Body Mist (100ml)</div>
+      <div class="product-price">Rs. 335.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 335.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1139823/OAk3nBq1Zi-1139823_1.jpg" alt="BODY MIST" />
+      <div class="product-name">RENEE Pink Romance Body Mist (150 ml)</div>
+      <div class="product-price">Rs. 347s.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 347s.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/the-love-co/COMBO_241025115137-4EV/0/z6mTvqXsCD-1130813_combo_21_1.jpg" alt="BODY MIST" />
+      <div class="product-name">THE LOVE CO. Japanese Cherry Blossom Shower Gel + Body Mist Pack of 2 Combo</div>
+      <div class="product-price">Rs. 798.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 798.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1104353/nsRZ8vlzb-8903105032797_1.jpg" alt="BODY MIST" />
+      <div class="product-name">Yardley London Violet & Raspberry Fine Fragrance Mist (140ml)</div>
+      <div class="product-price">Rs. 225.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 225.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1122574/stsYEmuz9g-1122574-1.jpg" alt="BODY MIST" />
+      <div class="product-name">The Body Shop Blissful Strawberry Fragrance Mist For Women (100ml)</div>
+      <div class="product-price">Rs. 1,395.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,395.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/fabessentials-by-fabindia/1063636/0/ek23b4Bjfy-YES8aYgbf-8907833005818_1.jpg" alt="BODY MIST" />
+      <div class="product-name">Fabessentials by Fabindia Passion Flower Body Spray (110ml)</div>
+      <div class="product-price">Rs. 265.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 265.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/949716/W9EmSjtgG-949716_1.jpg" alt="BODY MIST" />
+      <div class="product-name">AND Pretty Vogue Fragrance Mist (200ml)</div>
+      <div class="product-price">Rs. 200.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 200.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="sunscreen">
+  <div class="explore-title">EXPLORE OUR LATEST SUNSCREEN</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1165924/W_u8k5gAQ_-1165924_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Beauty of Joseon Relief Sun Aqua Fresh Rice + B5 SPF 50 + PA ++++ (50 ml)</div>
+      <div class="product-price">Rs. 1,500.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,500.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1137646/AmG8bmm15H-1137646_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">WishCare Niacinamide Oil Balance Sunscreen SPF 50 PA++++ (50 g)</div>
+      <div class="product-price">Rs. 404.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 404.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1144685/PzwlkcfE-4z-1144685-1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Dr. Sheth’s Ceramide & Vitamin C Sunscreen With SPF 50+ PA+++ (30 g)</div>
+      <div class="product-price">Rs. 263.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 263.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1002795/9p1Dql06WO-1002795_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Minimalist SPF 50 PA ++++ Sunscreen With Multi-Vitamin For Reducing Photoaging & No White Cast (50g)</div>
+      <div class="product-price">Rs. 399.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 399.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1132059/xnwiSnH3JN-1132059_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Foxtale Essentials Brightening Spf 50 Sunscreen with Vitamin C and Niacinamide (50ml)</div>
+      <div class="product-price">Rs. 303.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 303.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1096842/HUOnSydhlt-8908020017195_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Deconstruct Lightweight Gel Sunscreen SPF 55+ (50g)</div>
+      <div class="product-price">Rs. 331.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 331.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1083416/j-sSh2sSwJ-1083416_1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">The Derma Co 1% Hyaluronic Sunscreen Aqua Gel SPF 50 Pa++ (50g)</div>
+      <div class="product-price">Rs. 409.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 409.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1079530/Bht2b-OE_7-1079530-1.jpg" alt="SUNSCREEN" />
+      <div class="product-name">Aqualogica Radiance+ Dewy Lightweight Sunscreen Gel SPF 50+ PA+++ for Oily & Acne-Prone Skin (50 g)</div>
+      <div class="product-price">Rs. 386.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 386.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="arm">
+  <div class="explore-title">EXPLORE OUR LATEST UNDER ARM ROLLON</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1128361/KMFZa8_i7D-1128361_1.jpg" alt="ROLLON" />
+      <div class="product-name">Be Bodywise 4% AHA BHA Underarm Roll On Floral Fragrance (50ml)</div>
+      <div class="product-price">Rs. 328.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 328.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1134042/FmsxZ-g6mT-1134042_1.jpg" alt="ROLLON" />
+      <div class="product-name">WishCare Aqua Fresh Underarm Roll On Serum (50 ml)</div>
+      <div class="product-price">Rs. 299.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 299.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1137045/sb5dxSuhdb-1137045_1.jpg" alt="ROLLON" />
+      <div class="product-name">Minimalist Nonapeptide + AHA 06% Underarm Roll-On (40 ml)</div>
+      <div class="product-price">Rs. 399.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 399.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1144211/aNLPtbtht-1144211-1.jpg" alt="ROLLON" />
+      <div class="product-name">mCaffeine 5% AHA Underarm Roll On with Coffee (50 ml)</div>
+      <div class="product-price">Rs. 296.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 296.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1018229/vQOTmUbCVt-1018229_1.jpg" alt="ROLLON" />
+      <div class="product-name">Nivea Women Pearl & Beauty Beautiful Underarms Deodorant Spray (150ml)</div>
+      <div class="product-price">Rs. 299.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 299.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1092458/K1CEOxUHx-8906103796081_1.jpg" alt="ROLLON" />
+      <div class="product-name">Sirona Floral Fresh Underarm Roll On Deodorant (50ml)</div>
+      <div class="product-price">Rs. 186.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 186.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1015499/9HeJ-Cm86v-1015499_1.jpg" alt="ROLLON" />
+      <div class="product-name">TNW The Natural Wash Under Arm Roll On Mist (50ml)</div>
+      <div class="product-price">Rs. 239.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 239.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1177903/Z-ST5LhR7-1177903_1.jpg" alt="ROLLON" />
+      <div class="product-name">COSIQ Brightening Underarm Roll On Serum For Women (40 ml)</div>
+      <div class="product-price">Rs. 699.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 699.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="nightcream">
+  <div class="explore-title">EXPLORE OUR LATEST NIGHT CREAM</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/923404/_Mi-ciD_zm-923404_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Cetaphil Bright Healthy Radiance Night Comfort Cream (50g)</div>
+      <div class="product-price">Rs. 1,169.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,169.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/995989/8G_fEFfPAU-995989_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Re'equil Retinol Night Cream (30g)</div>
+      <div class="product-price">Rs. 375.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 375.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1002782/CaE0u32ri-1002782_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Minimalist 2% Retinoid Anti Ageing Night Cream for Wrinkles & Fine Lines for Sensitive Skin (30ml)</div>
+      <div class="product-price">Rs. 699.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 699.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1114179/1_mp6WRa7-1114179_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Simple Water Boost Skin Quench Sleeping Creme (50g)</div>
+      <div class="product-price">Rs. 449.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 449.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/964376/xOgweLPqMd-964376_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Lakme Youth Infinity Night Creme (50g)</div>
+      <div class="product-price">Rs. 714.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 714.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1129457/IcxBlcH8_--1129457-1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">mCaffeine Black Tea Complex Night Cream (50g)</div>
+      <div class="product-price">Rs. 399.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 399.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1110965/ul48urwMxG-1110965_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Deconstruct Retinol Night cream - 0.1% Retinol + 1% Beta-Glucan Complex (50g)</div>
+      <div class="product-price">Rs. 474.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 474.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1085096/Ql7ixpawRy-1085096_1.jpg" alt="NIGHT CREAM" />
+      <div class="product-name">Conscious Chemist 0.2% Retinol Anti aging Night Cream , Reduces Fine lines & Wrinkles (50g)</div>
+      <div class="product-price">Rs. 421.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 421.00</div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

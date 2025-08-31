@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+ .explore-section {
+      padding: 40px 60px;
+      background-color: #e9eff1;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px);
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%;
+      }
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .logo-header {
+      text-align: center;
+      padding: 20px 0 10px;
+      background-color: #ffffff;
+    }
+
+    .logo-header img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .logo-header h2 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .logo-header span {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      padding: 10px 0;
+    }
+
+    .image-card {
+      flex: 1 1 33%;
+      max-width: 33.33%;
+      padding: 5px;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .image-card {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- Row of Images -->
+<div class="image-row">
+  <div class="image-card">
+    <img src="https://th.bing.com/th/id/OIP.rDU0GokVaxS5DEm1xhw5bwHaEo?w=312&h=195&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Banner 1">
+  </div>
+  <div class="image-card">
+    <img src="https://th.bing.com/th/id/OIP.Hwn7wtXXX5V4ZoEeNRFnpAHaEo?w=279&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Banner 2">
+  </div>
+  <div class="image-card">
+    <img src="https://th.bing.com/th/id/OIP.xzdPy0XFzoVQUsQyK64H6AHaEo?w=308&h=192&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Banner 3">
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">Blushes</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/d/cdd8b995056446611091_1.jpg" alt="Bundle" />
+      <div class="product-name">Charlotte Tilbury Matte Beauty Blush Wand - Pillow Talk</div>
+      <div class="product-price">Rs. 3,338.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,338.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/8/38e661aKAYBE00000850_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Kay Beauty Velvet Creme Multi-Use Blush Tender</div>
+      <div class="product-price">Rs. 1,380.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,380.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/d/8d02eb6NYKAC00001997_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Nykaa Cosmetics Get Cheeky Blush Stick - Berry Cute</div>
+      <div class="product-price">Rs. 338.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 338.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/4/a4bed56KAYBE00000057_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Kay Beauty Creme Blush - Sweetheart Pink</div>
+      <div class="product-price">Rs. 631.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 631.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/5/753e15eINSIG00000812_1.jpg" alt="Lipstick" />
+      <div class="product-name">Insight Cosmetics Lip & Cheek Tint With Vitamin E, Multi Use Cream Formula, Long Lasting - Strawberry Summer</div>
+      <div class="product-price">Rs. 140.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 1,40.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/6/26fb772FAEBE00000141_1.jpg" alt="Highlighter" />
+      <div class="product-name">Fae Beauty 8H Long Wear Serum Like Finish Lush Blush - Wifey</div>
+      <div class="product-price">Rs. 506.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 506.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/4/243b0be8904245703240zz_1.jpg" alt="Blush" />
+      <div class="product-name">Nykaa Get Cheeky - Matte Blush Duo - Malibu Barbie 03</div>
+      <div class="product-price">Rs. 449.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 449.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/0/3/03282c9CHAAA00001244_1.jpg" alt="Blush" />
+      <div class="product-name">Charlotte Tilbury Unreal Blush Stick - Rosy Glow</div>
+      <div class="product-price">Rs. 4,250.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,250.00</div>
+    </div>
+
+<!-- CARD 9 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/7/87a23b2SWIAC00001614_001.jpg" alt="Blush" />
+      <div class="product-name">Swiss Beauty Cream It Up Blusher With Shea Butter - 3 Cheeky Peach</div>
+      <div class="product-price">Rs. 244.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 244.00</div>
+    </div>
+    <!-- CARD 10 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/c/6c92db2SWIAC00001700_1N.jpg" alt="Blush" />
+      <div class="product-name">Swiss Beauty Cheek It Up Lumi-Matte Finish Blush - 4 Too Cheeky</div>
+      <div class="product-price">Rs. 335.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 335.00</div>
+    </div>
+    <!-- CARD 11 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/d/cdd8b995060696170055_1.jpg" alt="Blush" />
+      <div class="product-name">Charlotte Tilbury Pillow Talk Lip And Cheek Glow - Colour Of Dreams</div>
+      <div class="product-price">Rs. 2,925.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,925.00</div>
+    </div>
+    <!-- CARD 12 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/7/f75be8f8904417312058_1.jpg" alt="Blush" />
+      <div class="product-name">STAZE Cheek Me Out Intense Color + Blendable Multi-Purpose Stick - 02 Bite</div>
+      <div class="product-price">Rs. 319.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 319.00</div>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>

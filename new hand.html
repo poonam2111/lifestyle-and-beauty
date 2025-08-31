@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+     /* new */
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .product-scroll-section {
+      padding: 2rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+      /* Hide scrollbar on some browsers */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: #fff;
+      min-width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 1rem;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 0.5rem;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+    .product-price {
+      font-size: 0.9rem;
+      color: #198754;
+      margin: 0;
+    }
+    /* new end */
+  </style>
+
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- new -->
+  <section class="product-scroll-section" style="background-color: rgb(249, 239, 226);">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="scroll-container">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://a.cdnsbn.com/images/products/l/27821198403-1.jpg" alt="Hand Mask" />
+          </div>
+          <div class="product-name">Hand Mask</div>
+          <p class="product-price">₹299</p>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.PnaucigMnhE8rA474C474&o=5&pid=21.1&w=148&h=260&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Hand Cream" />
+          </div>
+          <div class="product-name">Hand Cream</div>
+          <p class="product-price">₹339</p>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.KobplPWH5MA9oA474C474&o=5&pid=21.1&w=148&h=179&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Hand Wash" />
+          </div>
+          <div class="product-name">Hand Wash</div>
+          <p class="product-price">₹399</p>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.g42u1i2oyA7gow474C474&o=5&pid=21.1&w=148&h=246&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Hand Cream" />
+          </div>
+          <div class="product-name">Hand Cream</div>
+          <p class="product-price">₹299</p>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+ <!-- new end -->
+
+<!--CARDS-->
+<div class="explore-section" id="handmask">
+  <div class="explore-title">EXPLORE OUR LATEST HAND MASK</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1116029/sRQokBHvdV-8904378102736_1.jpg" alt="HAND MASK" />
+      <div class="product-name">O3+ Pedi Bright Hand Gloves Cream Mask (40g)</div>
+      <div class="product-price">Rs. 199.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 199.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1133030/tQAmAY3UT3-1133030_1.jpg" alt="HAND MASK" />
+      <div class="product-name">Innisfree Special Care Hand Mask (20 ml)</div>
+      <div class="product-price">Rs. 190.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 190.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/81iA9uqpluL._SX522_.jpg" alt="HAND MASK" />
+      <div class="product-name">LuxaDerme Hand Hydration Gloves | Deep Moisturising Gloves | Long Lasting Hydration | Evens Out Skin Tone |</div>
+      <div class="product-price">Rs. 269.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 269.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/resize-w:1024/000000000494433113/vvmA6NFbga-000000000494433113_1.jpg" alt="HAND MASK" />
+      <div class="product-name">Hand Masks Aloe vera • 1 piece</div>
+      <div class="product-price">Rs. 500.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 500.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61rJO07iwgL._SY679_.jpg" alt="HAND MASK" />
+      <div class="product-name">Masking Hand Hydration Gloves for Deep Moisturising, Brightening, Remove dull, dry skin</div>
+      <div class="product-price">Rs. 165.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 165.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71a6gINMusL._AC_UL480_FMwebp_QL65_.jpg" alt="HAND MASK" />
+      <div class="product-name">ROYAL NEEDS ; YOUR HIGHNESS Hand Peel Mask For Dead Skin Removal With Aloe Vera - 1 Pair | Exfoliating Hand Mask </div>
+      <div class="product-price">Rs. 399.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 4006.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/4103lxAvdYS._SX300_SY300_QL70_FMwebp_.jpg" alt="HAND MASK" />
+      <div class="product-name"> Jojoba Oil & Tea Tree Oil for Moisturising, Nourishing & Smoothening for Instant Baby Soft Hands |</div>
+      <div class="product-price">Rs. 299.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 299.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51WM-70VN-L._SX300_SY300_QL70_FMwebp_.jpg" alt="HAND MASK" />
+      <div class="product-name">Vitalogy Moisturizing Hand Mask Gloves – 1 Pair | Hydrating Hand Gloves for Dry, Cracked Hands |</div>
+      <div class="product-price">Rs. 274.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 274.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="handwash">
+  <div class="explore-title">EXPLORE OUR LATEST HAND WASH</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/skin-cottage/993630/0/_mjK6Nngwo-kna072ykOV-993630_1.jpg" alt="HAND WASH" />
+      <div class="product-name">SKIN COTTAGE Honey & Milk Hand Wash (500ml)</div>
+      <div class="product-price">Rs. 199.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 199.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1141227/EfJiIeAxr-1141227_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Kimirica Bouquet Hand Wash (270 ml)</div>
+      <div class="product-price">Rs. 414.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 414.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1130789/vcBWtkPRDN-1130789_1.jpg" alt="HAND WASH" />
+      <div class="product-name">THE LOVE CO. Luxury Black Rose and Oud Hand Wash For Moisturized Skin (250ml)</div>
+      <div class="product-price">Rs. 454.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 454.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1008560/_C1_d5PFO-1008560_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Kimirica Bouquet Luxury Hand Wash With Goodness Of Frangipani And Rose SLS & Paraben Free (500 ml)</div>
+      <div class="product-price">Rs. 760.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 760.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1143896/CBDPoXegE-1143896_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Dream. Immerse. Play. Hand Wash The Garden Stroll Collection (250 ml)</div>
+      <div class="product-price">Rs. 293.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 293.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1108805/dTWRJVlGbV-7290113145337_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Moroccanoil Oud Mineral Hand Wash (360ml)</div>
+      <div class="product-price">Rs. 1,980.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,980.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/fabessentials-by-fabindia/1063595/0/3Ic-B8XXYy-SRss5lbwl9-8907833005504_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Fabessentials by Fabindia Lavender Rosemary Hand Wash (300ml)</div>
+      <div class="product-price">Rs. 315.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 315.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1038186/tR-JVTJka6-8906049915164_1.jpg" alt="HAND WASH" />
+      <div class="product-name">Vaadi Herbals Deep Moisturising Honey and Sandal Hand Wash (250ml)</div>
+      <div class="product-price">Rs. 147.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 147.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="handcream">
+  <div class="explore-title">EXPLORE OUR LATEST HAND CREAM</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1147149/Y3e2XJSeSD-1147149_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Fixderma Brightening Hand Cream with SPF 50 Hand Moisturizer for Dry, Rough & Itchy Hands (30g)</div>
+      <div class="product-price">Rs. 225.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 225.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1162464/vMRaa9b7DC-1162464_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Plum BodyLovin' Vanilla Vibes Hand Cream- Ultra Moisturizing with Shea Butter (30 g)</div>
+      <div class="product-price">Rs. 233.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 233.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1153005/7qQxmQIa8Nj-1153005_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Milk Baobab Blooming Perfume Hand Cream White Musk (50 g)</div>
+      <div class="product-price">Rs. 599.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 599.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1103984/oSJdqlwPED-1103984_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">The Body Shop British Rose Hand Cream (30ml)</div>
+      <div class="product-price">Rs. 345.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 345.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/989877/6WJkkXQzS-989877-1.jpg" alt="HAND CREAM" />
+      <div class="product-name">L'occitane Shea Butter Hand Cream - (30ml)</div>
+      <div class="product-price">Rs. 990.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 990.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1104503/SSjLeZuPJr-1104503_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Caudalie Vinotherapie Hand & Nail Cream (75ml)</div>
+      <div class="product-price">Rs. 1,300.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,300.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1162463/WhtOUKk10-1162463_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Plum BodyLovin' Vanilla Caramello Hand Cream- Ultra Moisturizing with Shea Butter (30 g)</div>
+      <div class="product-price">Rs. 233.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 233.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1162466/1hv_VgdscW-1162466_1.jpg" alt="HAND CREAM" />
+      <div class="product-name">Plum BodyLovin' Hawaiian Rumba Hand Cream- Ultra Moisturizing with Shea Butter (30 g)</div>
+      <div class="product-price">Rs. 233.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 233.00</div>
+    </div>
+ 
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

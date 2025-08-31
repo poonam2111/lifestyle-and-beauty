@@ -1,0 +1,682 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BodyCare</title>
+
+ <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+ .navbar{
+      background-color: #3f1f1f;
+    }
+    .sbtn{
+    background: #4ead97;
+    color: white;
+    }
+    .carousel-inner{
+      margin-top: 2rem;
+    }
+
+    .beauty-section {
+     margin-top: 30px;
+      position: relative;
+      background-color: #ffe6e6;
+      border-radius: 16px;
+      padding: 90px;
+      overflow: visible;
+      margin-bottom: 180px; /* leave space for overflowed carousel */
+    }
+
+    .beauty-heading {
+      max-width: 500px;
+    }
+
+    .beauty-carousel-wrapper {
+      position: absolute;
+      left: 70%;
+      transform: translateX(-50%);
+      bottom: -120px;
+      width: 50%;
+    }
+
+    .beauty-carousel .card {
+     
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .beauty-carousel .card img {
+      object-fit: cover;
+      width: 100%;
+      height: 300px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: #333;
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #888;
+    }
+
+    .carousel-indicators .active {
+      background-color: black;
+    }
+
+    @media (max-width: 768px) {
+      .beauty-carousel-wrapper {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+      }
+
+      .beauty-section {
+        margin-bottom: 60px;
+      }
+
+      .beauty-carousel-wrapper {
+        width: 100%;
+      }
+    }
+
+    .hero-section {
+  height: 600px;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-section .overlay {
+  z-index: 1;
+}
+
+     #careCategorySection .care-card img {
+    transition: transform 0.3s ease;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  #careCategorySection .care-card:hover img {
+    transform: scale(1.05);
+  }
+
+  #careCategorySection .card {
+    border-radius: 1rem;
+  }
+
+  #careCategorySection h2 {
+    color: #3f1f1f;
+  }
+
+ #topCategoriesCarousel {
+    background-color: rgb(250, 226, 230);
+  }
+
+  #topCategoriesCarousel .category-btn {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  #topCategoriesCarousel .category-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+  }
+
+  #topCategoriesCarousel .category-scroll {
+    scrollbar-width: none; /* Firefox */
+  }
+
+  #topCategoriesCarousel .category-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+    #featuredBundlesSection .bundle-card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  #featuredBundlesSection .bundle-card:hover img {
+    transform: scale(1.03);
+  }
+
+  #featuredBundlesSection .card {
+    border-radius: 1rem;
+  }
+
+  #featuredBundlesSection .badge {
+    font-size: 0.8rem;
+    padding: 0.4em 0.6em;
+    border-radius: 1rem;
+  }
+
+/*  */
+#routineTabsSection .nav-pills .nav-link {
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-weight: 500;
+  }
+
+  #routineTabsSection .card img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  #routineTabsSection .card:hover img {
+    transform: scale(1.03);
+  }
+
+  #routineTabsSection .card {
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  #routineTabsSection .card:hover {
+    transform: translateY(-4px);
+  }
+
+  #routineTabsSection ul li {
+    padding: 2px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- nav end -->
+ <!-- new -->
+ <div class="container position-relative">
+  <!-- Pink text section -->
+  <div class="beauty-section">
+    <div class="beauty-heading">
+      <small class="text-muted">Discover</small>
+      <h2 class="fw-bold mt-2">Beauty buys you need</h2>
+      <p>Serving you beauty’s finest with can’t-miss deals—all in here</p>
+    </div>
+  </div>
+
+  <!-- Single-card carousel that overflows down -->
+  <div class="beauty-carousel-wrapper">
+   <div id="beautyCardCarousel" class="carousel slide beauty-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+       <a href="new hair.html"><div class="carousel-item active">
+          <div class="card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.Q4AIWD-lexY70pTLo5-a7QHaEA?w=1024&h=554&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Foundation">
+            <div class="card-body">
+              <h5 class="card-title">Hair care</h5>
+            </div>
+          </div>
+        </div></a>
+        <!-- Slide 2 -->
+        <a href="new hand.html"><div class="carousel-item">
+          <div class="card">
+            <img src="https://tse1.explicit.bing.net/th/id/OIP.gGtagRjMHeZw_9R8ek1evQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brush Set">
+            <div class="card-body">
+              <h5 class="card-title">Hand Care</h5>
+            </div>
+          </div>
+        </div></a>
+        <!-- Slide 3 -->
+        <a href="new foot.html"><div class="carousel-item">
+          <div class="card">
+            <img src="https://www.byrdie.com/thmb/EkLEumNe9mp-fpG9i36EClhf9Ls=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/bydie-best-foot-cream-update-tout-825c097330a6444995a1ad12258fc117.jpg" alt="Lipstick">
+            <div class="card-body">
+              <h5 class="card-title">Foot Care</h5>
+            </div>
+          </div>
+        </div></a>
+        <!-- Slide 4 -->
+        <a href="new body.html"><div class="carousel-item">
+          <div class="card">
+            <img src="https://media.allure.com/photos/591326109edf7b1db5f1acfd/16:9/w_1280,c_limit/rca-2017-social-aveeno-body-wash.jpg" alt="Setting Spray">
+            <div class="card-body">
+              <h5 class="card-title">Body Care</h5>
+            </div>
+          </div>
+        </div></a>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#beautyCardCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#beautyCardCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#beautyCardCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#beautyCardCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#beautyCardCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#beautyCardCarousel" data-bs-slide-to="3"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+<!-- top sec -->
+<!-- ✅ Hero Section -->
+<section class="hero-section text-white text-center position-relative">
+  <div class="hero-bg">
+    <img src="https://keikolynn.com/wp-content/uploads/2018/03/skin-care-all.jpg" alt="Bodycare Products" class="img-fluid w-100" style="max-height: 600px; object-fit: cover;">
+    <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.5);"></div>
+  </div>
+  <div class="hero-content position-absolute top-50 start-50 translate-middle px-3">
+    <h1 class="display-4 fw-bold">Nourish Every Inch of You</h1>
+    <p class="lead mb-4">Gentle care for hair, hands, feet, and body</p>
+    <a href="new body.html" class="btn btn-light me-2 px-4 py-2">Shop All</a>
+    <a href="#careCategorySection" class="btn btn-outline-light px-4 py-2">Explore Categories</a>
+  </div>
+</section>
+<!-- end -->
+
+<!-- ✅ Care Category Section -->
+<section id="careCategorySection" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Explore Our Care Categories</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+      <!-- Hair Care -->
+      <div class="col">
+        <div class="card care-card h-100 shadow-sm border-0">
+          <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1091949/b9FmcRRGf-8906734452097_1.jpg" class="card-img-top" alt="Hair Care">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hair Care</h5>
+            <p class="card-text">Frizz-free hair in 1 wash</p>
+            <a href="new hair.html" class="btn btn-sm btn-outline-dark">Explore Hair</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hand Care -->
+      <div class="col">
+        <div class="card care-card h-100 shadow-sm border-0">
+          <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1165938/SP6VgDwb4-1165938_1.jpg" class="card-img-top" alt="Hand Care">
+          <div class="card-body text-center">
+            <h5 class="card-title">Hand Care</h5>
+            <p class="card-text">Soft & hydrated hands always</p>
+            <a href="new hand.html" class="btn btn-sm btn-outline-dark">Explore Hands</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foot Care -->
+      <div class="col">
+        <div class="card care-card h-100 shadow-sm border-0">
+          <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:494/Tira_Combos/Fixderma/TIRA006551/1147144_combo_9/1147144_combo_9_1.jpg" class="card-img-top" alt="Foot Care">
+          <div class="card-body text-center">
+            <h5 class="card-title">Foot Care</h5>
+            <p class="card-text">Relax, exfoliate & heal tired feet</p>
+            <a href="new foot.html" class="btn btn-sm btn-outline-dark">Explore Feet</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body Care -->
+      <div class="col">
+        <div class="card care-card h-100 shadow-sm border-0">
+          <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:494/Tira_Combos/Plum/1023947_Combo_4/1023947_Combo_4-1.jpg" class="card-img-top" alt="Body Care">
+          <div class="card-body text-center">
+            <h5 class="card-title">Body Care</h5>
+            <p class="card-text">Nourish your skin from head to toe</p>
+            <a href="new body.html" class="btn btn-sm btn-outline-dark">Explore Body</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end -->
+
+<!-- ✅ Top Categories Carousel Section -->
+<section id="topCategoriesCarousel" class="py-4">
+  <div class="container">
+    <h4 class="fw-bold mb-3 text-center">Top Categories</h4>
+
+    <!-- Scrollable Button Row -->
+    <div class="category-scroll d-flex overflow-auto gap-3 px-2">
+       <a href="new hair.html#hairmask"><button class="category-btn">Hair Mask</button></a>
+      <a href="new hair.html#shampoo"><button class="category-btn">Natural Hair Shampoo and Conditioner</button></a>
+      <a href="new hair.html#hairoil"><button class="category-btn">Hair Oil</button></a>
+      <a href="new hair.html#serum"><button class="category-btn">Hair Serum</button></a>
+      <a href="new hair.html#hairs"><button class="category-btn">Hair Spray</button></a>
+      <a href="new body.html#bodywash"><button class="category-btn">Body Wash</button></a>
+      <a href="new body.html#bodylotion"><button class="category-btn">Body Lotion</button></a>
+      <a href="new body.html#bodymist"><button class="category-btn">Body Mist</button></a>
+      <a href="new body.html#sunscreen"><button class="category-btn">Sunscreen</button></a>
+      <a href="new body.html#arm"><button class="category-btn">Under Arm Rollon </button></a>
+      <a href="new hand.html#handmask"><button class="category-btn">Hand Mask</button></a>
+      <a href="new hand.html#handcream"><button class="category-btn">Hand Cream</button></a>
+      <a href="new hand.html#handwash"><button class="category-btn">Hand Wash</button></a>
+      <a href="new foot.html#footcream"><button class="category-btn">Foot Cream</button></a>
+      <a href="new foot.html#footmask"><button class="category-btn">Foot Mask</button> </a>   
+      <a href="new body.html#nightcream"><button class="category-btn">Night Cream</button></a>     
+    </div>
+  </div>
+</section>
+<!-- end -->
+
+<!-- ✅ Featured Collections / Bundles -->
+<section id="featuredBundlesSection" class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">🌟 Featured Collections</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+      <!-- Essential Daily Care Kit -->
+      <div class="col">
+        <div class="card h-100 border-0 shadow bundle-card position-relative">
+          <span class="badge bg-danger position-absolute top-0 end-0 m-2">Limited Edition</span>
+          <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Plum/TIRA004065/1129264_Combo_1/1129264_Combo_1_1.jpg" class="card-img-top" alt="Essential Daily Care Kit">
+          <div class="card-body">
+            <h5 class="card-title">Essential Daily Care Kit</h5>
+            <p class="card-text">Your everyday hair, hand & body routine in one kit.</p>
+            <a href="new body.html" class="btn btn-sm btn-outline-dark">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top 5 Hand Creams -->
+      <div class="col">
+        <div class="card h-100 border-0 shadow bundle-card position-relative">
+          <span class="badge bg-success position-absolute top-0 end-0 m-2">Bestseller</span>
+          <img src="https://hips.hearstapps.com/hmg-prod/images/best-face-wash-dry-skin-1584382500.png?crop=1.00xw:1.00xh;0,0&resize=640:*" class="card-img-top" alt="Top 5 Hand Creams">
+          <div class="card-body">
+            <h5 class="card-title">Top 5 Hand Creams</h5>
+            <p class="card-text">Our best-loved hand creams for soft, nourished skin.</p>
+            <a href="new hand.html#handcream" class="btn btn-sm btn-outline-dark">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summer Hydration Combo -->
+      <div class="col">
+        <div class="card h-100 border-0 shadow bundle-card position-relative">
+          <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">New Arrival</span>
+          <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/13107376a.webp" class="card-img-top" alt="Summer Hydration Combo">
+          <div class="card-body">
+            <h5 class="card-title">Summer Hydration Combo</h5>
+            <p class="card-text">Stay refreshed with ultra-light hydrating products.</p>
+            <a href="new body.html#bodylotion" class="btn btn-sm btn-outline-dark">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end -->
+
+<!-- ✅ Routine Tabs Section -->
+<section id="routineTabsSection" class="py-5" style="background-color: rgb(247, 233, 236)">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">🧴 Body Care Rituals</h2>
+
+    <!-- Tabs Navigation -->
+    <ul class="nav nav-pills justify-content-center mb-4" id="routineTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="morning-tab" data-bs-toggle="pill" data-bs-target="#morning" type="button" role="tab">🌞 Morning</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="night-tab" data-bs-toggle="pill" data-bs-target="#night" type="button" role="tab">🌙 Night</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="monsoon-tab" data-bs-toggle="pill" data-bs-target="#monsoon" type="button" role="tab">🌧️ Monsoon</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="routineTabContent">
+
+      <!-- Morning Tab -->
+      <div class="tab-pane fade show active" id="morning" role="tabpanel">
+       <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-5">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+              <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:494/Tira_Combos/82E/1136449_Combo_1/1136449_Combo_1-1.jpg" class="card-img-top rounded-top-4" alt="Morning Routine">
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Daily Body Glow Routine</h5>
+                <ul class="list-unstyled small">
+                  <li><strong>Step 1:</strong> Cleanse with Citrus Wash</li>
+                  <li><strong>Step 2:</strong> Exfoliate with Mild Scrub</li>
+                  <li><strong>Step 3:</strong> Moisturize with Glow Lotion</li>
+                  <li><strong>Step 4:</strong> Protect with SPF Mist</li>
+                </ul>
+                <a href="new body.html" class="btn btn-sm btn-outline-dark">Shop This Routine</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Night Tab -->
+      <div class="tab-pane fade" id="night" role="tabpanel">
+        <div class="row justify-content-center g-4">
+          <div class="col-md-6 col-lg-5">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+              <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:494/Tira_Combos/Deconstruct/TIRA005486/1085979_Combo_7/1085979_Combo_7_1.jpg" class="card-img-top rounded-top-4" alt="Night Routine">
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Nighttime Nourishment Set</h5>
+                <ul class="list-unstyled small">
+                  <li><strong>Step 1:</strong> Lavender Body Cleanser</li>
+                  <li><strong>Step 2:</strong> Deep Body Oil</li>
+                  <li><strong>Step 3:</strong> Rich Repair Balm</li>
+                  <li><strong>Step 4:</strong> Sleep Butter</li>
+                </ul>
+                <a href="new body.html#nightcream" class="btn btn-sm btn-outline-dark">Shop This Routine</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monsoon Tab -->
+      <div class="tab-pane fade" id="monsoon" role="tabpanel">
+        <div class="row justify-content-center g-4">
+          <div class="col-md-6 col-lg-5">
+            <div class="card h-100 border-0 shadow-sm rounded-4">
+              <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/14789477a.webp" class="card-img-top rounded-top-4" alt="Monsoon Pack">
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Monsoon Protection Pack</h5>
+                <ul class="list-unstyled small">
+                  <li><strong>Step 1:</strong> Antibacterial Body Wash</li>
+                  <li><strong>Step 2:</strong> Neem Exfoliating Scrub</li>
+                  <li><strong>Step 3:</strong> Gel Moisturizer</li>
+                  <li><strong>Step 4:</strong> Fresh Deo Spray</li>
+                </ul>
+                <a href="new body.html" class="btn btn-sm btn-outline-dark">Shop This Routine</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- tab-content -->
+  </div>
+</section>
+<!-- end -->
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+</body>
+</html>

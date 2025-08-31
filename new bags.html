@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+    /* nav end */
+/* new circle */
+ body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+    }
+
+    .icon-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 0 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .icon-scroll-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .icon-scroll-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+
+    .icon-card {
+      flex: 0 0 auto;
+      text-align: center;
+      width: 100px;
+    }
+
+    .icon-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.5rem;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .icon-circle:hover {
+      transform: scale(1.05);
+    }
+
+    .icon-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icon-label {
+      font-size: 0.9rem;
+      color: #555;
+    }
+/* circle end */
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+    
+  </style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- nev end -->
+
+  <!-- icon circle -->
+   <div class="section" style="background-color: #fcfcfc;">
+    <h2 class="section-title">🌸 Your Carry-All Companions</h2>
+    <div class="icon-scroll-container">
+      
+      <!-- bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://th.bing.com/th/id/OIP.qLQo_DIMqXI9-yNI7_q2pgHaHa?w=163&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="bag">
+        </div>
+        <div class="icon-label">Leather Handbag</div>
+      </div>
+
+      <!-- bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://th.bing.com/th/id/OIP.AiV-Bqo99p5DAaEAElgn3gHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="bag">
+        </div>
+        <div class="icon-label">Designer Tote Bags</div>
+      </div>
+
+      <!-- bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://th.bing.com/th/id/R.5daf42a9c6e0b9ca06e31fccc4ea31c2?rik=sEjm%2fw%2bZzVcrJw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-6UkFz5_YvTU%2fVOQtzRVlHXI%2fAAAAAAAAATI%2fCspFS7WclL4%2fs1600%2flatest%252Bhandbags%252Bdesigns%252Bfor%252Bwomen-girls%252B2015.jpg&ehk=CY06Tgv6RiimgmmwkHazitnHggJ58%2fioUDedfK4vT1M%3d&risl=&pid=ImgRaw&r=0" alt="bag">
+        </div>
+        <div class="icon-label">Letest Medium handbags</div>
+      </div>
+
+      <!--bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.28Ppvo7n2vh12_FdwI6XFgHaF7?w=3000&h=2400&rs=1&pid=ImgDetMain&o=7&rm=3" alt="bag">
+        </div>
+        <div class="icon-label">New Bagpacks</div>
+      </div>
+
+      <!-- bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.niv8vellbMclvvvcjlH6PgHaJx?pid=ImgDet&w=474&h=625&rs=1&o=7&rm=3" alt="bag">
+        </div>
+        <div class="icon-label">Stylish Short Bags</div>
+      </div>
+
+      <!-- bag -->
+      <div class="icon-card">
+        <div class="icon-circle">
+          <img src="https://static.topvintage.net/shop-product/121643-Amici-Mayfair-Glitter-Bow-Handbag-212-10-23523-20171016-0034w-full.jpg" alt="bag">
+        </div>
+        <div class="icon-label">Retro Bags</div>
+      </div>
+
+    </div>
+  </div>
+   <!-- circle end -->
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST BAGS</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3219G_VUW_main?$main@2x$" alt="BAGS" />
+      <div class="product-name">Small Satin Shoulder Bag</div>
+      <div class="product-price">Rs. 4,472.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,472.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K1086G_0K6_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Crossbody Wallet Bag</div>
+      <div class="product-price">Rs. 7,616.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 7,616.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3111G_FUP_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Mini Tote Bag</div>
+      <div class="product-price">Rs. 5,949.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 5,949.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04F3094G_UB1_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Convertible Crossbody Bag</div>
+      <div class="product-price">Rs. 11,391.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 11,391.87</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3165G_FUP_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Slim Backpack</div>
+      <div class="product-price">Rs. 12,050.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 12,050.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04F3206G_UB1_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Logo Jacquard Hobo Bag</div>
+      <div class="product-price">Rs. 3,406.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 3,4006.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3159G_UB1_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Large Bucket Bag</div>
+      <div class="product-price">Rs. 13,036.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 13,036.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04F3077G_VUW_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Mini Plissé Chain Crossbody Bag</div>
+      <div class="product-price">Rs. 1,259.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,259.00</div>
+    </div>
+
+     <!-- CARD 9 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K613038_W75_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Flap Backpack</div>
+      <div class="product-price">Rs. 15,472.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 15,472.44</div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K612901_BEH_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="GBAGS" />
+      <div class="product-name">Convertible Camera Bag</div>
+      <div class="product-price">Rs. 5,616.21 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 5,616.21</div>
+    </div>
+
+    <!-- CARD 11 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K613019_W75_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Tote Bag</div>
+      <div class="product-price">Rs. 15,849.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 15,849.87</div>
+    </div>
+
+    <!-- CARD 12 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3088G_67U_alternate1?wid=600&fmt=jpeg&qlt=100%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Ruched Shoulder Bag</div>
+      <div class="product-price">Rs. 6,391.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 6,391.87</div>
+    </div>
+
+    <!-- NEW CARD 13 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K612806_TFQ_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Crossbody Wallet Bag</div>
+      <div class="product-price">Rs. 12,050.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 12,050.00</div>
+    </div>
+
+    <!-- NEW CARD 14 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K613026_BEH_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Small Raffia Tote Bag</div>
+      <div class="product-price">Rs. 8,406.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 8,4006.00</div>
+    </div>
+
+    <!-- NEW CARD 15 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/K60K612992_PDE_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Woven Shoulder Bag</div>
+      <div class="product-price">Rs. 10,336.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 10,336.00</div>
+    </div>
+ <!-- NEW CARD 16 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://calvinklein-eu.scene7.com/is/image/CalvinKleinEU/LV04K3094G_GN9_alternate1?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72" alt="BAGS" />
+      <div class="product-name">Twist Crossbody Bag</div>
+      <div class="product-price">Rs. 5,259.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 5,259.00</div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>accsssories</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    /* nav */
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+/* nav end */
+/* jwell container */
+    .jewellery-carousel-container {
+      padding: 60px 0;
+      background-color: #fff;
+    }
+
+    .circle-card {
+      background-color: #fff9f0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .circle-card img {
+      max-width: 65%;
+      max-height: 65%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .circle-card img:hover {
+      transform: scale(1.75);
+      cursor: pointer;
+    }
+
+    .carousel-text {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background-color: #f8f8f8;
+    }
+
+    .carousel-inner .row {
+      justify-content: center;
+      gap: 30px;
+    }
+/* end conteiner */
+/* jwell cards */
+    .card {
+  min-height: 450px; /* Or any height you prefer */
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .card-img-container img {
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card-img-container img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .card-img-container:hover img.img-hover {
+    opacity: 1;
+  }
+
+  .card-img-container:hover img.img-main {
+    opacity: 0;
+  }
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+/* card end */
+/* card buttons buy */
+    </style>
+  <div id="thankYouMsg" style="display:none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #3e8e4d; color: white; padding: 12px 24px; border-radius: 8px; z-index: 9999;">
+  Thank you for purchasing!
+</div>
+<script>
+  function showThankYou() {
+    const msg = document.getElementById("thankYouMsg");
+    msg.style.display = "block";
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 2500); // message hides after 2.5 seconds
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const buyButtons = document.querySelectorAll(".btn-dark");
+    buyButtons.forEach(function (button) {
+      button.addEventListener("click", showThankYou);
+    });
+  });
+</script>
+<!-- end card button buy -->
+<!-- add to cart sidebar and msgbox -->
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar bg-white shadow-lg">
+  <div class="cart-header d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+    <h5 class="m-0">🛒 Your Cart</h5>
+    <button class="btn-close" onclick="closeCartSidebar()"></button>
+  </div>
+  <div class="cart-body p-3">
+    <ul id="cartItems" class="list-unstyled mb-0">
+      <!-- Items will appear here -->
+    </ul>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCartSidebar()"></div>
+<style>
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  z-index: 1050;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1040;
+  display: none;
+}
+
+.cart-overlay.show {
+  display: block;
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const card = button.closest(".card");
+        const title = card.querySelector(".card-title").innerText;
+        const price = card.querySelector(".text-primary").innerText;
+
+        addToCart(title, price);
+        openCartSidebar();
+      });
+    });
+  });
+
+  function addToCart(title, price) {
+    const cartItems = document.getElementById("cartItems");
+
+    const li = document.createElement("li");
+    li.classList.add("mb-2", "border-bottom", "pb-2");
+    li.innerHTML = `<strong>${title}</strong><br><span class="text-muted">${price}</span>`;
+
+    cartItems.appendChild(li);
+  }
+
+  function openCartSidebar() {
+    document.getElementById("cartSidebar").classList.add("open");
+    document.getElementById("cartOverlay").classList.add("show");
+  }
+
+  function closeCartSidebar() {
+    document.getElementById("cartSidebar").classList.remove("open");
+    document.getElementById("cartOverlay").classList.remove("show");
+  }
+</script>
+<!-- end add to cart -->
+</head>
+<body>
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- acc cards -->
+<div class="container jewellery-carousel-container">
+  <h2 class="text-center fw-bold mb-5">Everyday Demi fine Jewellery</h2>
+
+  <div id="jewelleryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row justify-content-center">
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/PM-BRACELETS-030_1.jpg?v=1744528247&width=900" alt="New Arrivals">
+            </div>
+            <div class="carousel-text">New Arrivals</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/NK395_0dd881f4-e174-4dde-bcdd-9eeaa0980f4e.jpg?v=1744526070&width=900" alt="Necklaces">
+            </div>
+            <div class="carousel-text">NECKLACES</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/RG215_885e2064-497c-4d0e-b8c5-5830a028cb91.jpg?v=1744525343&width=900" alt="Rings">
+            </div>
+            <div class="carousel-text">RINGS</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/PM-BRACELETS-005_1.jpg?v=1744528643&width=900" alt="Bracelets">
+            </div>
+            <div class="carousel-text">BRACELETS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row justify-content-center">
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/PMW01AN006_2.jpg?v=1750412208&width=900" alt="Anklets">
+            </div>
+            <div class="carousel-text">ANKLETS</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/PMWSSNC199-G.jpg?v=1744519419&width=900" alt="Chains">
+            </div>
+            <div class="carousel-text">CHAINS</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/ER275_1.jpg?v=1744524052&width=900" alt="Earrings">
+            </div>
+            <div class="carousel-text">EARRINGS</div>
+          </div>
+          <div class="col-auto text-center">
+            <div class="circle-card">
+              <img src="https://palmonas.com/cdn/shop/files/SSWER0637.jpg?v=1744977933&width=900" alt="Hoops">
+            </div>
+            <div class="carousel-text">HOOPS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls with icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#jewelleryCarousel" data-bs-slide="prev">
+      <i class="bi bi-chevron-left fs-3"></i>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#jewelleryCarousel" data-bs-slide="next">
+      <i class="bi bi-chevron-right fs-3"></i>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- end acc cards -->
+
+<!-- Full-Width Single Image Section -->
+<div class="w-100 my-4">
+      <h2 class="section-title" style="text-align: center; padding-bottom: 14px;">Our Featured Look</h2>
+  <img src="https://cdn.caratlane.com/media/static/images/V4/2025/CL/06_JUNE/Banner/kanak/02/SC_Desktop.jpg" class="img-fluid w-100" alt="Full Width Fashion Banner" />
+</div>
+<!-- end -->
+
+<!-- cards -->
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/products/01_19cebbca-146d-43cc-9a93-7a8ca6a3eee0.jpg?v=1744528486&width=900" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/PMNK169_00444e85-7e87-4909-92f6-12e6515721f9.jpg?v=1744528486&width=900" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Paperclip Chain Necklace</h5>
+          <p class="card-text text-muted">"Lightweight luxury that speaks volumes."</p>
+          <p class="fw-bold text-primary">₹55,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/L/JL04142-1RP6P0_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/L/JL04142-1RP6P0_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gold Sunflower Pendant</h5>
+          <p class="card-text text-muted">"A perfect harmony of shine and sophistication."</p>
+          <p class="fw-bold text-primary">₹86,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/U/L/UL00630-1Y00P0_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/U/L/UL00630-1Y00P0_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Lip Chain Necklace</h5>
+          <p class="card-text text-muted">"Gracefully handcrafted to elevate every neckline."</p>
+          <p class="fw-bold text-primary">₹65,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://rubans.in/cdn/shop/files/rubans-dual-tone-plated-floral-pendant-statement-copper-necklace-necklace-34689438417070.jpg?v=1751570409&width=1080" class="card-img-top img-main" alt="Front Image">
+          <img src="https://rubans.in/cdn/shop/files/rubans-dual-tone-plated-floral-pendant-statement-copper-necklace-necklace-34689438482606.jpg?v=1751570409&width=1800" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Simple authentic chain</h5>
+          <p class="card-text text-muted">"Delicately designed to rest close to the heart."</p>
+          <p class="fw-bold text-primary">₹27,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 5 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://rubans.in/cdn/shop/products/rubans-voguish-women-set-of-3-gold-plated-rings-rings-33577523904686.jpg?v=1751572311&width=1800" class="card-img-top img-main" alt="Front Image">
+          <img src="https://rubans.in/cdn/shop/products/rubans-voguish-women-set-of-3-gold-plated-rings-rings-33577530392750.jpg?v=1751572311&width=1800" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gold ring set</h5>
+          <p class="card-text text-muted">Where bold beauty meets timeless form."</p>
+          <p class="fw-bold text-primary">₹22,299</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 6 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/R/JR10472-1YS300_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/R/JR10472-1YS300_3_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Dimond Ring</h5>
+          <p class="card-text text-muted">"Crafted to captivate — forever and always."</p>
+          <p class="fw-bold text-primary">₹32,900</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 7 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/files/RG264_1.jpg?v=1744524032&width=900" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/RG264_204410e0-45b7-47ee-9323-ce2310f2bf15.jpg?v=1744524032" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Sneak ring</h5>
+          <p class="card-text text-muted">"Elegance wrapped around your finger."</p>
+          <p class="fw-bold text-primary">₹45,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 8 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/R/JR03980-YGS300_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/R/JR03980-YGS300_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Beautiful ring</h5>
+          <p class="card-text text-muted">"Not just a ring — a statement of grace."</p>
+          <p class="fw-bold text-primary">₹78,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/L/JL05718-2YP500_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/L/JL05718-2YP500_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Beauty dimond neckless</h5>
+          <p class="card-text text-muted">"Drape elegance — a piece that speaks without words."</p>
+          <p class="fw-bold text-primary">₹19,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/products/03_226864b1-edbb-4265-a9ba-94fd2812df7a.jpg?v=1744527716" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/NK226-B.jpg?v=1744527717" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gold cubic chain neckless</h5>
+          <p class="card-text text-muted">"Where timeless beauty meets modern charm."</p>
+          <p class="fw-bold text-primary">₹27,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+        <img src="https://palmonas.com/cdn/shop/products/06_d12a85ec-341d-46f3-95d0-35528ec915fb.jpg?v=1745911904&width=900" class="card-img-top img-main" alt="Front Image">
+        <img src="https://palmonas.com/cdn/shop/files/NK276-MD2.jpg?v=1745911904&width=900" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Small cute butterfly neckpeace</h5>
+          <p class="card-text text-muted">"Made to shine in quiet luxury."</p>
+          <p class="fw-bold text-primary">₹76,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/products/04_4268ae0d-d41c-4914-ba16-4155dad0a377.jpg?v=1744527550&width=900" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/NK271_48189518-521f-4ec1-a156-1690932cbf10.jpg?v=1744527550&width=900" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">miss Pearl neckless</h5>
+          <p class="card-text text-muted">"From subtle shimmer to bold shine — find your glow."</p>
+          <p class="fw-bold text-primary">₹54,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 5 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://images.cltstatic.com/media/product/350/AI00093-SS0000-fly-on-butterfly-anklet-in-rhodium-plated--silver-prd-1-model.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://images.cltstatic.com/media/product/350/AI00093-SS0000-fly-on-butterfly-anklet-in-rhodium-plated--silver-prd-1-base.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Butterfly anklet for ladies</h5>
+          <p class="card-text text-muted">"Wrapped in rhythm, designed to move with you."</p>
+          <p class="fw-bold text-primary">₹39,299</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 6 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://images.cltstatic.com/media/product/350/AI00138-SS0000-the-protector-anklet-crafted-in--silver-prd-1-model.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://images.cltstatic.com/media/product/350/AI00138-SS0000-the-protector-anklet-crafted-in--silver-prd-4-pd.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Designer anklet</h5>
+          <p class="card-text text-muted">"For the free spirit — wear your charm around your ankle."</p>
+          <p class="fw-bold text-primary">₹50,900</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 7 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://images.cltstatic.com/media/product/350/AI00103-SS0000-oxidised-mammilaria-bloom-anklets-in--silver-prd-1-model.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://images.cltstatic.com/media/product/350/AI00103-SS0000-oxidised-mammilaria-bloom-anklets-in--silver-prd-1-base.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Stylish beauty anklet</h5>
+          <p class="card-text text-muted">"Understated beauty, crafted for sun-kissed feet."</p>
+          <p class="fw-bold text-primary">₹74,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 8 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://images.cltstatic.com/media/product/350/AI00128-SS0000-sagai-shor-foot-harness-in-gold-plated--silver-prd-1-model.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://images.cltstatic.com/media/product/350/AI00128-SS0000-sagai-shor-foot-harness-in-gold-plated--silver-prd-1-base.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gold master peace anklet</h5>
+          <p class="card-text text-muted">"Barefoot luxury — perfect for every season."</p>
+          <p class="fw-bold text-primary">₹43,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+       <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+         <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://rubans.in/cdn/shop/products/rubans-voguish-multicolour-rail-bracelet-bangles-bracelets-33764191699118.jpg?v=1751572228&width=1800" class="card-img-top img-main" alt="Front Image">
+          <img src="https://rubans.in/cdn/shop/files/rubans-voguish-multicolour-rail-bracelet-bangles-bracelets-33842015666350.jpg?v=1751572228&width=1800" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Crystal Love Bangle Bracelet</h5>
+          <p class="card-text text-muted">"Wrapped in elegance — the final touch to your style."</p>
+          <p class="fw-bold text-primary">₹16,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/T/JT02910-RGS300_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/T/JT02910-RGS300_3_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Stylish premium dimond bracelet</h5>
+          <p class="card-text text-muted">"Subtle sparkle, endless charm."</p>
+          <p class="fw-bold text-primary">₹25,999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/files/01_e869a853-ae2b-4543-8f22-61455b80f6a6.webp?v=1744528231&width=900" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/Heart_all_over_bracelet-1_0000_de55078b-edca-4627-bad2-9167a3afd7f0.jpg?v=1744528231" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Hearts All Over Bracelet</h5>
+          <p class="card-text text-muted">"From stackable to statement — style your way."</p>
+          <p class="fw-bold text-primary">₹86,899</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/files/PM-BRACELETS-027-ML1.jpg?v=1745909275" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/PM-BRACELETS-027.jpg?v=1745909284&width=900" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Infinity Wish Bracelet</h5>
+          <p class="card-text text-muted">"Minimal yet mesmerizing — a piece to treasure."</p>
+          <p class="fw-bold text-primary">₹29,799</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 5 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://palmonas.com/cdn/shop/files/DSC04454_copy.jpg?v=1751006942&width=900" class="card-img-top img-main" alt="Front Image">
+          <img src="https://palmonas.com/cdn/shop/files/SSWER0688_2.jpg?v=1744976326&width=900" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Pearl buauty hoops</h5>
+          <p class="card-text text-muted">"Elevate your elegance — one sparkle at a time."</p>
+          <p class="fw-bold text-primary">₹64,299</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 6 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE09662-1RP900_4_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE09662-1RP900_3_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Floral Frost Hoops</h5>
+          <p class="card-text text-muted">"From studs to chandeliers — always stunning."</p>
+          <p class="fw-bold text-primary">₹31,900</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 7 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE00955-PTP600_2_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE00955-PTP600_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Crystal Earrings</h5>
+          <p class="card-text text-muted">"Bold or delicate — always unforgettable."</p>
+          <p class="fw-bold text-primary">₹87,499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 8 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-img-container">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE03996-YGP600_2_lar.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://cdn.caratlane.com/media/catalog/product/J/E/JE03996-YGP600_1_lar.jpg" class="card-img-top img-hover" alt="Hover Image">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Dimond flowral earrings</h5>
+          <p class="card-text text-muted">"Tiny drops of elegance for everyday shine."</p>
+          <p class="fw-bold text-primary">₹95,099</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+          <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- card end -->
+
+<!-- Crafted With Love Section -->
+<div class="container-fluid py-5" style="background-color: rgb(247, 237, 209);">
+  <div class="row align-items-center px-3 px-md-5">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="image copy.png" class="img-fluid rounded-3 shadow" alt="Jewellery Making">
+    </div>
+    <div class="col-md-6 text-center text-md-start">
+      <h2 class="display-6 mb-3" style="font-family: 'Playfair Display', serif;">Crafted With Love</h2>
+      <p class="lead mb-4">Every piece tells a story — from the first sketch to the final polish. We don’t just sell jewellery, we create heirlooms meant to last generations.</p>
+      <img src="ragita2.png" alt="Founder Signature" style="max-width: 150px;">
+      <p class="mt-2 fst-italic">— The LifeStyle Team</p>
+    </div>
+  </div>
+</div>
+<!-- /end -->
+
+<!-- Explore More Grid -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Explore More</h2>
+  <div class="row g-3" style="cursor: pointer;">
+    <div class="col-6 col-md-3"><img src="https://www.giva.co/cdn/shop/files/R0187_5.jpg?v=1694158687&width=533" class="img-fluid rounded" alt="Rings"></div>
+    <div class="col-6 col-md-3"><img src="https://www.giva.co/cdn/shop/files/ER0138_1.jpg?v=1742393739&width=533" class="img-fluid rounded" alt="Earrings"></div>
+    <div class="col-6 col-md-3"><img src="https://www.giva.co/cdn/shop/files/BR0694_1.jpg?v=1737613391&width=533" class="img-fluid rounded" alt="Bracelet"></div>
+    <div class="col-6 col-md-3"><img src="https://www.giva.co/cdn/shop/files/PD02124_5_1f79283a-1a28-4bb8-b017-645490ad81b8.jpg?v=1710854176&width=533" class="img-fluid rounded" alt="Gold Jewellery"></div>
+  </div>
+</div>
+<!-- end -->
+
+<!-- 💬 Customer Love Wall -->
+<section class="bg-white py-5 border-top">
+<!-- Testimonials Carousel -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">What Our Customers Say</h2>
+  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active">
+        <blockquote class="blockquote">
+          <p>"Absolutely in love with the craftsmanship! I wore it for my wedding and got endless compliments."</p>
+          <footer class="blockquote-footer">Aanya Kapoor, Mumbai</footer>
+        </blockquote>
+      </div>
+      <div class="carousel-item">
+        <blockquote class="blockquote">
+          <p>"Beautiful packaging, stunning quality. It’s become my everyday favorite."</p>
+          <footer class="blockquote-footer">Neha Sharma, Delhi</footer>
+        </blockquote>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" style="background-color: #635f5f;"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" style="background-color: #635f5f;"></span>
+    </button>
+  </div>
+</div>
+</section>
+
+<!-- end -->
+
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+   <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

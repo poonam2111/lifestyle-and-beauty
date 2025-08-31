@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+     body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner-section {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .banner-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+
+    h2 {
+      margin-top: 60px;
+      font-size: 28px;
+      color: #111;
+      margin-left: 3rem;
+    }
+
+    .scroll-wrapper {
+      overflow-x: auto;
+      padding: 30px 0;
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      padding: 10px 20px;
+      width: max-content;
+    }
+
+    .card {
+      min-width: 230px;
+      height: 230px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Scrollbar style (optional) */
+    .scroll-wrapper::-webkit-scrollbar {
+      height: 6px;
+    }
+    .scroll-wrapper::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+
+    .bar {
+      width: 120px;
+      height: 6px;
+      background: #eee;
+      border-radius: 20px;
+      margin: 0 auto 60px;
+      position: relative;
+    }
+
+    .bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20%;
+      width: 60%;
+      height: 100%;
+      background: #ddd;
+      border-radius: 20px;
+    }
+   
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .section-title p {
+      color: #555;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+     .products {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-card img {
+      width: 180px;
+      height: 220px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .product-subtitle {
+      font-size: 13px;
+      color: #666;
+      margin: 6px 0;
+      text-align: center;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .rating .stars {
+      color: #f4c430;
+    }
+
+    .price-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .price-box {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 8px;
+      font-size: 13px;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .price-box span {
+      display: block;
+    }
+
+    .discount {
+      color: green;
+      font-weight: 600;
+    }
+
+    .add-section-N {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .heart-btn, .add-btn-N {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .heart-btn {
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+
+    .add-btn-N {
+      background-color: #4caf81;
+      color: #fff;
+    }
+
+    .add-btn-N:hover {
+      background-color: #3c9a6e;
+    }
+    
+
+    .section-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      margin-top: 4rem;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      justify-content: flex-start;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+
+    .care-card {
+      min-width: 130px;
+      flex-shrink: 0;
+      text-align: center;
+      margin-left: 4rem;
+    }
+
+    .care-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 8px;
+      margin-left: 2rem;
+    }
+
+    .care-title {
+      font-size: 14px;
+      color: #333;
+    }
+    .explore-section {
+      padding: 40px 60px;
+      background-color: #e9eff1;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px);
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge-N {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn-s {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%;
+      }
+    }
+     </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <img src="ragita2.png" alt="logo" height="10%" width="10%">
+    <div class="ms-auto">
+      <ul class="navbar-nav d-flex flex-row gap-4">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold" href="contact.php">Contact</a></li>
+        
+      </ul>
+    </div>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search">
+      <button class="sbtn" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="banner-section">
+    <img src="https://nathabit.in/_nat/images/website_2_d0c2cc786c.jpg?format=auto&width=1080&quality=75" alt="Blush Banner Image">
+  </div>
+
+  <h2>Made Fresh Daily in our Ayurvedic Kitchen</h2>
+
+  <div class="scroll-wrapper">
+    <div class="card-container">
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_08_21237f0372.jpg?format=auto&width=640&quality=75" alt="Oranges"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_09_687b2c0ad5.jpg?format=auto&width=640&quality=75" alt="Amla"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_01_39a35b46e0.jpg?format=auto&width=640&quality=75" alt="Spices"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Chandan_ba2fc11eaf.jpg?format=auto&width=640&quality=75" alt="Paste"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_04_94a9beeaa2.jpg?format=auto&width=640&quality=75" alt="Herbs"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_29_a8ab7d8a3b.jpg?format=auto&width=640&quality=75" alt="Powders"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_35_fa421aff37.jpg?format=auto&width=640&quality=75" alt="Blending"></div>
+      <div class="card"><img src="https://nathabit.in/_nat/images/Making_Shots_Tikta_13_f1a4fc1389.jpg?format=auto&width=640&quality=75" alt="Natural Ingredients"></div>
+    </div>
+  </div>
+
+ <div class="section-title">
+    <h2>Popular & Trending</h2>
+    <p>EkdumTaaza Love for Skin</p>
+  </div>
+<div class="products">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://nathabit.in/_nat/images/Moringa_Cream_PDP_1_acd1b517e2.jpg?format=auto&width=384&quality=75" alt="Product 1">
+      <div class="product-title">Moringa Vit-C Tikta Cream Face Wash</div>
+      <div class="product-subtitle">for All Skin Types</div>
+      <div class="rating">
+        <div class="stars">★★★★★</div>
+        <div>4.6 (203)</div>
+      </div>
+      <div class="price-options">
+        <div class="price-box">
+          <span class="discount">29% off</span>
+          <span>₹269 <s>₹377</s></span>
+          <span>₹2.69/g</span>
+        </div>
+        <div class="price-box">
+          <span class="discount">31% off</span>
+          <span>₹523 <s>₹753</s></span>
+          <span>₹2.62/g</span>
+        </div>
+      </div>
+      <div class="add-section">
+        <button class="heart-btn">♡</button>
+        <button class="add-btn-N">+ ADD</button>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://nathabit.in/_nat/images/1_81ace244c5.jpg?format=auto&width=384&quality=75" alt="Product 2">
+      <div class="product-title">All-Day Face Malai - Above 35Yrs - Hot Dry Weather</div>
+      <div class="product-subtitle">Flax Bakuchi Vit-EC Omega+</div>
+      <div class="rating">
+        <div class="stars">★★★★★</div>
+        <div>4.7 (247)</div>
+      </div>
+      <div class="price-options">
+        <div class="price-box">
+          <span class="discount">32% off</span>
+          <span>₹561 <s>₹825</s></span>
+          <span>₹11.22/g</span>
+        </div>
+        <div class="price-box">
+          <span class="discount">29% off</span>
+          <span>₹355 <s>₹497</s></span>
+          <span>₹11.83/g</span>
+        </div>
+      </div>
+      <div class="add-section">
+        <button class="heart-btn">♡</button>
+        <button class="add-btn-N">+ ADD</button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://nathabit.in/_nat/images/1_0631d38611.png?format=auto&width=384&quality=75" alt="Product 3">
+      <div class="product-title">Active Orange Kiwi Vit-C Gel</div>
+      <div class="product-subtitle">Brightening & Collagen Boost</div>
+      <div class="rating">
+        <div class="stars">★★★★★</div>
+        <div>4.7 (589)</div>
+      </div>
+      <div class="price-options">
+        <div class="price-box">
+          <span class="discount">29% off</span>
+          <span>₹399 <s>₹559</s></span>
+          <span>₹7.98/g</span>
+        </div>
+        <div class="price-box">
+          <span class="discount">30% off</span>
+          <span>₹780 <s>₹1118</s></span>
+          <span>₹7.80/g</span>
+        </div>
+      </div>
+      <div class="add-section">
+        <button class="heart-btn">♡</button>
+        <button class="add-btn-N">+ ADD</button>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <img src="https://nathabit.in/_nat/images/1_b679f63061.jpg?format=auto&width=384&quality=75" alt="Product 4">
+      <div class="product-title">Fresh Chandan Nagakesar Lepa</div>
+      <div class="product-subtitle">Prime Radiance & Inner Glow</div>
+      <div class="rating">
+        <div class="stars">★★★★★</div>
+        <div>4.7 (332)</div>
+      </div>
+      <div class="price-options">
+        <div class="price-box">
+          <span class="discount">31% off</span>
+          <span>₹336 <s>₹490</s></span>
+          <span>₹4.20/g</span>
+        </div>
+        <div class="price-box">
+          <span class="discount">29% off</span>
+          <span>₹175 <s>₹245</s></span>
+          <span>₹4.38/g</span>
+        </div>
+      </div>
+      <div class="add-section">
+        <button class="heart-btn">♡</button>
+        <button class="add-btn-N">+ ADD</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="section-title">Special Care for Special Needs</div>
+
+  <div class="scroll-container">
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/night_care_aad8f7ba17.jpg?format=auto&width=640&quality=75" alt="Night Care">
+      <div class="care-title">Night Care</div>
+    </div>
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/pignmentation_c3998d7431.jpg?format=auto&width=640&quality=75" alt="Pigmentation">
+      <div class="care-title">Pigmentation</div>
+    </div>
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/dry_skin_f21a91ccf4.jpg?format=auto&width=640&quality=75" alt="Dry Skin">
+      <div class="care-title">Dry Skin</div>
+    </div>
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/anti_ageing_resized_54c2e794a2.jpg?format=auto&width=640&quality=75" alt="Anti-ageing">
+      <div class="care-title">Anti-ageing</div>
+    </div>
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/acne_62099fb49f.jpg?format=auto&width=640&quality=75" alt="Oil & Acne Control">
+      <div class="care-title">Oil & Acne Control</div>
+    </div>
+    <div class="care-card">
+      <img src="https://nathabit.in/_nat/images/glowing_radiance_and_brightening_1bd1bc8a97.jpg?format=auto&width=640&quality=75" alt="Radiance">
+      <div class="care-title">Radiance</div>
+    </div>
+  </div>
+
+<!--CARDS-->   
+<div class="explore-section" id="sun">
+  <div class="explore-title">EXPLORE SUNSCREEN</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/e/be7ac0aBEAAR00000010_b1.jpg" alt="Bundle" />
+      <div class="product-name">Beauty Of Joseon Relief Sunscreen Rice + Probiotics SPF 50+ PA++++</div>
+      <div class="product-price">Rs. 1,099| ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,099</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/3/5352c71DECON00000051_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Deconstruct Fluid Brightening Sunscreen SPF 50+ PA++++ for Dry Skin, Hydrating & 8-Hour Long-Lasting</div>
+      <div class="product-price">Rs. 365.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 365.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/c/4ce3a458904417314618_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">The Derma Co 1% Hyaluronic Sunscreen SPF 50 PA++++ Aqua Gel For Normal To Oily Skin</div>
+      <div class="product-price">Rs. 959.87 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 959.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/8/481c12eNYLOTUS000021_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Lotus Professional Phyto-Rx Whitening & Brightening Creme SPF 25 PA+++</div>
+      <div class="product-price">Rs. 565.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 565.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/2/a29940e7612076600645_01.jpg" alt="Lipstick" />
+      <div class="product-name">Cetaphil Sun SPF 50+ Light Gel Very High Protection Mineral Base for All Skin Types, Sensitive Skin</div>
+      <div class="product-price">Rs. 1,550.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,550.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/f/6f51a76MAMAE00000951_1.jpg" alt="Highlighter" />
+      <div class="product-name">Mamaearth Vitamin C Daily Glow Sunscreen SPF 50 PA+++ for Tan Protection</div>
+      <div class="product-price">Rs. 424.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 424.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/a/4aa4e60WISHC00000048_1.jpg" alt="Blush" />
+      <div class="product-name">Wishcare Sunscreen Body Lotion SPF 50 Broad Spectrum PA+++ UVA & UVB Protection - Body Sunscreen</div>
+      <div class="product-price">Rs. 500.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 500.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/3/5352c71DECON00000027_1.jpg" alt="Blush" />
+      <div class="product-name">Deconstruct Lightweight Gel Sunscreen SPF 55+ PA+++</div>
+      <div class="product-price">Rs. 339.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 339.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="cre">
+  <div class="explore-title">EXPLORE EYECREAM</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/2/e2449ddDOTKE00000278_1.jpg" alt="Bundle" />
+      <div class="product-name">Dot & Key Pomegranate Retinol + Caffeine Under Eye Cream for Dark Circles, Wrinkles & Puffiness</div>
+      <div class="product-price">Rs. 406.44 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 406.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/d/3/d32b126MCAFF00000257_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">MCaffeine Coffee Hydrogel Under Eye Patches for Dark Circles with Hyaluronic Acid Depuffs</div>
+      <div class="product-price">Rs. 616.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 616.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/6/b67c3d4COSRX00000007_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">COSRX Advanced Snail Peptide Eye Cream</div>
+      <div class="product-price">Rs. 1,743.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,743.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/b/cb427e7BELAB00000020_01.jpg" alt="Glow Stick" />
+      <div class="product-name">Bella Vita EyeLift Under Eye Cream Gel for Dark Circles</div>
+      <div class="product-price">Rs. 209.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 209.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/c/8c4dcc2PYUNK00000014_1.jpg" alt="Lipstick" />
+      <div class="product-name">Pyunkang Yul Black Tea Time Reverse Eye Patch</div>
+      <div class="product-price">Rs. 1,190.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,190.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/d/8dc4c198809732913846-1.jpg" alt="Highlighter" />
+      <div class="product-name">Mixsoon Melting Collagen Eye Film Intensive Firming & Wrinkle Care</div>
+      <div class="product-price">Rs. 497.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 497.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/1/c130d53SKIAU00000006.jpg" alt="Blush" />
+      <div class="product-name">SKINSIDE Under Eye Hydrogel Patches</div>
+      <div class="product-price">Rs. 424.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 424.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/7/57d13508809579273141_1.jpg" alt="Blush" />
+      <div class="product-name">Mizon Black Pearl Eye Gel Patch</div>
+      <div class="product-price">Rs. 1,739.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,739.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="tone">
+  <div class="explore-title">EXPLORE TONER</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/d/fd35c08885190820085_2.jpg" alt="Bundle" />
+      <div class="product-name">PIXI Hydrating Rose Glow Mist</div>
+      <div class="product-price">Rs. 1,352.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,352.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/9/7/97b94d9MINIM00000088_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Minimalist 8% Glycolic Acid Toner For Exfoliates Smoothes Skin</div>
+      <div class="product-price">Rs. 474.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 474.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/9/d/9d71313BEAAR00000005_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Beauty Of Joseon Ginseng Essence Water</div>
+      <div class="product-price">Rs. 1,178.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,178.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/0/b00850c737534800058_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Plum Green Tea Toner With Glycolic Acid - Tightens Pores, Fights Pimples & Controls Oil Alcohol-Free</div>
+      <div class="product-price">Rs. 367.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 367.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/2/b223b08HYPHE00000044_1.jpg" alt="Lipstick" />
+      <div class="product-name">Hyphen 7% Ceramides-NMF Face Toner Essence | 5% Glass Skin Blend with Rice Water</div>
+      <div class="product-price">Rs. 496.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 496.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/1/a1bb71fWISHC00000004_1.jpg" alt="Highlighter" />
+      <div class="product-name">Wishcare Pure & Natural Kannauj Rose Water For Skin Face & Hair - Rose Water Spray Face Toner</div>
+      <div class="product-price">Rs. 347.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 347.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/d/7de986b8908014690403_1.jpg" alt="Blush" />
+      <div class="product-name">Underated Multipurpose Toning Solution With 8% Glycolic Acid + 1% Salicylic Acid + 1% GDL</div>
+      <div class="product-price">Rs. 267.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 267.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/c/fc41a8d8906120580038a_1.jpg" alt="Blush" />
+      <div class="product-name">Pilgrim White Lotus Natural Face Mist & Toner with Camellia & Witch Hazel</div>
+      <div class="product-price">Rs. 239.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 239.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="clean">
+  <div class="explore-title">EXPLORE CLEANSERS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/2/c2f98968806182550997_0.jpg" alt="Bundle" />
+      <div class="product-name">The Face Shop Rice Water Bright Korean Cleanser - Best Face Wash for Even Tone & Glowing Skin</div>
+      <div class="product-price">Rs. 809.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 809.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/c/5ced9056928820029589_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Garnier Micellar Cleansing Water For Sensitive Skin Gentle Cleanser & Make Up Remover</div>
+      <div class="product-price">Rs. 476.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 476.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/1/e/1e51769BIODE00000004_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Bioderma Pigmentbio Foaming Cream Brightening Exfoliating Cleanser</div>
+      <div class="product-price">Rs. 899.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 899.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/7/77517748809576261110-1.jpg" alt="Glow Stick" />
+      <div class="product-name">SKIN1004 Madagascar Centella Light Cleansing Oil</div>
+      <div class="product-price">Rs. 1,784.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,784.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/9/5989_2570_1.jpg" alt="Lipstick" />
+      <div class="product-name">Neutrogena Deep Clean Facial Cleanser Face Wash for Normal to Oily Skin</div>
+      <div class="product-price">Rs. 496.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 496.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/7/a7b48a5PLUMX00000393_1.jpg" alt="Highlighter" />
+      <div class="product-name">Plum 1% Salicylic Acid Foaming Face Wash - Fights Active Acne & Controls Oil For Smooth Skin</div>
+      <div class="product-price">Rs. 276.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 276.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/8/689f788THEDE00000231_1.jpg" alt="Blush" />
+      <div class="product-name">The Derma Co 2% Niacinamide Oily Skin Cleanser</div>
+      <div class="product-price">Rs. 254.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 254.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/n/y/nykab00000172_1.jpg" alt="Blush" />
+      <div class="product-name">Nykaa Naturals Sandalwood & Orange Peel Face Scrub for De-Tanning</div>
+      <div class="product-price">Rs. 173.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 173.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="ser">
+  <div class="explore-title">EXPLORE SERUMS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/9/394e9c5MINIM00000001_a.jpg" alt="Bundle" />
+      <div class="product-name">Minimalist 10% Niacinamide Face Serum With Matmarine + Zinc For Reducing Oil & Blemishes</div>
+      <div class="product-price">Rs. 569.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 569.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/d/1/d118115CETAP00000136_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Cetaphil Bright Healthy Radiance Perfecting Serum 7X Power With Antioxidant C & Advanced Peptide</div>
+      <div class="product-price">Rs. 616.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 616.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/9/394e9c5MINIM00000004_a.jpg" alt="Eyeshadow" />
+      <div class="product-name">Minimalist 2% Salicylic Acid Face Serum For Blackheads & Whiteheads</div>
+      <div class="product-price">Rs. 522.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 522.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/1/f18ee65DECON00000008_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Deconstruct 10% Vitamin C Serum with Ferulic Acid for Dark Spots & Even Skin Tone,For All Skin Types</div>
+      <div class="product-price">Rs. 615.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 615.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/9/a97bc81EUCER00000007_1.jpg" alt="Lipstick" />
+      <div class="product-name">Eucerin Anti-Pigment Dual Serum With Thiamidol & Hyaluronic Acid , Reduces Dark Spots & Rejuvenates</div>
+      <div class="product-price">Rs. 3,024.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 3,024.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/7/67f51a3HYPHE00000003_1A.jpg" alt="Highlighter" />
+      <div class="product-name">Hyphen Golden Hour Glow Serum 56% Glow Hyphened All Skin Types</div>
+      <div class="product-price">Rs. 614.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 614.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/2/4221aa63666057106965_1.jpg" alt="Blush" />
+      <div class="product-name">Clarins Double Serum Light Texture</div>
+      <div class="product-price">Rs. 7,920.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 7,920.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/8/88a48a1THECI00000112_1.jpg" alt="Blush" />
+      <div class="product-name">The Ordinary Alpha Arbutin 2% + HA Face Serum</div>
+      <div class="product-price">Rs. 1,200.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,200.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="mois">
+<div class="explore-title">EXPLORE MOISTURISERS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/b/bbe1986DOTKE00000054_1a.jpg" alt="Bundle" />
+      <div class="product-name">Dot & Key Vitamin C + E Super Bright Face Moisturizer For Glowing Skin, Fades Dark Spots</div>
+      <div class="product-price">Rs. 472.44 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 472.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/1/e17f5b4FOXTA00000151_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Foxtale Nourishing Moisturiser With Niacinamide & Vit E for 24HR Hydration</div>
+      <div class="product-price">Rs. 616.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 616.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/6/86174ee5011451103931_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Simple Kind to Skin Hydrating Light Moisturizer All Skin Types Moisturizer</div>
+      <div class="product-price">Rs. 359.87 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 359.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/c/6cd87b1LAKME00001169_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Lakme Peach Milk Soft Creme Face Moisturizer</div>
+      <div class="product-price">Rs. 427.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 427.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/6/261022827835_S1-8901030977121.jpg" alt="Lipstick" />
+      <div class="product-name">Ponds Super Light Gel Oil-Free Moisturize With Hyaluronic Acid & Vitamin E</div>
+      <div class="product-price">Rs. 496| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 496</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/a/2aa71cbNYCETA0000005_1.jpg" alt="Highlighter" />
+      <div class="product-name">Cetaphil Moisturising Cream for dry to very dry Sensitive skin, Dermatologist Recommended</div>
+      <div class="product-price">Rs. 528.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 528.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/1/8/181c09d8906142025821_1.jpg" alt="Blush" />
+      <div class="product-name">Plix 1.20% Retinol & 1% Bakuchi Oil Pomegranate Anti Ageing Night Cream, Reduce Fine Line & Wrinkles</div>
+      <div class="product-price">Rs. 500.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 500.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/c/8cfe00b8809803586887_2.jpg" alt="Blush" />
+      <div class="product-name">LANEIGE Water Sleeping Mask</div>
+      <div class="product-price">Rs. 1,739.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,739.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="sheet">
+  <div class="explore-title">EXPLORE SHEET MASK</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/8/8806194022826.jpg" alt="Bundle" />
+      <div class="product-name">TONYMOLY I'M Rice Mask Sheet</div>
+      <div class="product-price">Rs. 100.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 100.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/7/870f4b68806194004334_1a.jpg" alt="Glossy Balm" />
+      <div class="product-name">TONYMOLY Pureness 100 Collagen Mask Sheet</div>
+      <div class="product-price">Rs. 100.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 100.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/8/8806358558666.jpg" alt="Eyeshadow" />
+      <div class="product-name">TONYMOLY Master Lab Vitamin C Mask</div>
+      <div class="product-price">Rs. 205.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 205.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/3/a39dcb5WILDG00000042-1.jpg" alt="Glow Stick" />
+      <div class="product-name">WILDGLOW Korean Glass Skin Bio-Collagen Overnight Face Mask - Pack of 16</div>
+      <div class="product-price">Rs. 6157.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 6157.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/0/40dd19b8809937360964_1.jpg" alt="Lipstick" />
+      <div class="product-name">Biodance Hydro Cera-Nol Real Deep Mask</div>
+      <div class="product-price">Rs. 380.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 380.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/0/60ec5a59108830112014_1.jpg" alt="Highlighter" />
+      <div class="product-name">The Wellness Shop Bio Collagen Sheet Mask</div>
+      <div class="product-price">Rs. 418.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 418.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/8/6/86f787eSANFE00000560_01.jpg" alt="Blush" />
+      <div class="product-name">Sanfe Instant Depigmentation Vitamin C Facial Mask With 100% Fruit Extracts</div>
+      <div class="product-price">Rs. 50.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 50.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/2/f2fe1958904245712280-az_1.jpg" alt="Blush" />
+      <div class="product-name">Nykaa Skin Secrets Exotic Indulgence Gold Sheet Mask For Revitalized & Youthful Skin</div>
+      <div class="product-price">Rs. 200.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 200.00</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="explore-section" id="lipi">
+  <div class="explore-title">EXPLORE LIPBALM</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/2/f2c11328809925170889_1.jpg" alt="Bundle" />
+      <div class="product-name">LANEIGE Glaze Craze Tinted Lip Serum - Peach Glaze</div>
+      <div class="product-price">Rs. 1,035.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,035.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/e/5e6facf609332819580-1.png" alt="Glossy Balm" />
+      <div class="product-name">e.l.f. Cosmetics Squeeze Me Lip Balm - Vanilla Frosting</div>
+      <div class="product-price">Rs. 450.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 450.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/6/265723d8908025314091_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Deconstruct Tinted Lip Balm with 1% Vitamin C, SPF30, Hydrating & Non-Sticky for Soft, Bright Lips</div>
+      <div class="product-price">Rs. 229.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 229.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/d/d/ddb9da7INDEW00000014_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Inde Wild Dewy Lip Balms Treatment</div>
+      <div class="product-price">Rs. 703.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 703.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/f/cf474e28904320706548_1.jpg" alt="Lipstick" />
+      <div class="product-name">SUGAR Tipsy Lip Balm For Dry & Chapped Lips With Vit E, Shea Butter & Jojoba Oil|SPF 02 Cosmopolitan</div>
+      <div class="product-price">Rs. 107.00| ⭐ 4.8</div>
+      <div class="add-btn-s">ADD TO BAG RS. 107.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/4/24bc7acCLINI00000216_1.jpg" alt="Highlighter" />
+      <div class="product-name">Clinique Almost Lipstick In Black Honey (Lip Balm)</div>
+      <div class="product-price">Rs. 1,840.00 | ⭐ 4.7</div>
+      <div class="add-btn-s">ADD TO BAG RS. 1,840.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/2/f2f7800DIORX00000167_1.jpg" alt="Blush" />
+      <div class="product-name">DIOR Addict Lip Glow - 007 - Raspberry</div>
+      <div class="product-price">Rs. 4,400.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 4,400.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/3/e34c9928906143061361_1.jpg" alt="Blush" />
+      <div class="product-name">Typsy Beauty Glaze Pout Polish Peptide Lip Treatment Balm - 02 Strawberry Cheesecake</div>
+      <div class="product-price">Rs. 646.00 | ⭐ 4.9</div>
+      <div class="add-btn-s">ADD TO BAG RS. 646.00</div>
+    </div>
+
+  </div>
+</div>
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>

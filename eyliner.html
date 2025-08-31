@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+     body {
+      background-color: #f6f6f6;
+      font-family: Arial, sans-serif;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 50%;
+      height: auto;
+    }
+
+    .banner-button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .shop-section {
+      padding: 30px;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+
+    .shop-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .formulation-card, .color-card {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .formulation-card:hover, .color-card:hover {
+      transform: scale(1.05);
+    }
+
+    .formulation-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .formulation-label {
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .color-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      line-height: 80px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+      background-color: #e9eff1;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px);
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%;
+      }
+    }
+</STYLE>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <div class="text-center mt-3">
+    <h2>Buy Eyeliner Online <span style="font-size: 1rem; color: gray;">(724)</span></h2>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner p-3">
+    
+    <img src="https://images-static.nykaa.com/uploads/07e13c9d-02b7-4d3c-8af8-e4a482c50c42.jpg?tr=w-1800,cm-pad_resize" alt="Banner Left">
+    <img src="https://images-static.nykaa.com/uploads/1d9e1ab4-35db-4c1f-96ca-fa524767e0ad.jpg?tr=cm-pad_resize,w-1800" alt="Banner Right">
+   
+  </div>
+
+  <!-- Shop by Formulation -->
+  <div class="shop-section">
+    <div class="shop-title">Shop By Formulation</div>
+    <div class="formulation-options">
+      <div class="formulation-card">
+        <img src="https://th.bing.com/th/id/OIP.jNZ_OpZ6YFLp2j3E9Mt_KwHaFI?w=270&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Liquid">
+        <div class="formulation-label">Liquid</div>
+      </div>
+      <div class="formulation-card">
+        <img src="data:image/webp;base64,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" alt="Pen">
+        <div class="formulation-label">Pen</div>
+      </div>
+      <div class="formulation-card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.UcjWyEgo8tXjvIatxwnBKgAAAA?pid=ImgDet&w=184&h=324&c=7&dpr=1.3&o=7&rm=3" alt="Gel">
+        <div class="formulation-label">Gel</div>
+      </div>
+      <div class="formulation-card">
+        <img src="https://th.bing.com/th/id/OIP.j_n2X9hoYLHOFv7QUfK4pgHaKa?w=130&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Waterproof">
+        <div class="formulation-label">Waterproof</div>
+      </div>
+      <div class="formulation-card">
+        <img src="data:image/webp;base64,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" alt="Eye Combos">
+        <div class="formulation-label">Eye Combos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop by Color -->
+  <div class="shop-section">
+    <div class="shop-title">Shop By Color</div>
+    <div class="color-options">
+      <div class="color-card">
+        <div class="color-circle" style="background-color: black;">Black</div>
+      </div>
+      <div class="color-card">
+        <div class="color-circle" style="background-color: rgb(86, 142, 215);">Blue</div>
+      </div>
+      <div class="color-card">
+        <div class="color-circle" style="background-color: rgb(87, 47, 33);">Brown</div>
+      </div>
+      <div class="color-card">
+        <div class="color-circle" style="background-color: rgb(131, 198, 131);">Green</div>
+      </div>
+      <div class="color-card">
+        <div class="color-circle" style="background-color: gray;">White</div>
+      </div>
+    </div>
+  </div>
+<!--CARDS-->
+<div class="explore-section" id="eye">
+  <div class="explore-title">Eyeliners</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/21PA5K3ZrSL._SX300_SY300_QL70_FMwebp_.jpg" alt="Bundle" />
+      <div class="product-name">Lakme Eyeconic Liquid Eye Liner, Black, Long Lasting Matte Waterproof Liner</div>
+      <div class="product-price">Rs. 150.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 150.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/315tVkYFJ6L._SX300_SY300_QL70_FMwebp_.jpg" alt="Glossy Balm" />
+      <div class="product-name">FACES CANADA Magneteyes Eyeliner - Black, 3.5ml | Intense Matte Finish </div>
+      <div class="product-price">Rs. 175.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 175.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/419WRgBBvDL._SX522_.jpg" alt="Eyeshadow" />
+      <div class="product-name">Blue Heaven Intense Eyeliner Easy Sketch, Matte Finish Black, 1ml</div>
+      <div class="product-price">Rs. 144.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 144.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41Z79PZ07IL._SX300_SY300_QL70_FMwebp_.jpg" alt="Glow Stick" />
+      <div class="product-name">Lakme Unreal Precision Liquid Eye Liner Long Lasting Matte & Shimmer Finish, Lightweight</div>
+      <div class="product-price">Rs. 285.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 285.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61-0F946hpL._SX522_.jpg" alt="Lipstick" />
+      <div class="product-name">MARS City Stroke Charming Eyes Matte Liquid Eyeliner | Long-Lasting | Smudge Proof Eye Liner | Felt Tip For Precise Application | Quick Drying Formula (1Ml) (02-Green)</div>
+      <div class="product-price">Rs. 159.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 159.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41x2F6Vvp3L._SX522_.jpg" alt="Highlighter" />
+      <div class="product-name">MMaybelline New York Eyeliner, Intense Eyeliner, Long-lasting, Felt-tip Applicator, Line Tattoo High Impact Liner, Black</div>
+      <div class="product-price">Rs. 206.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 306.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/31snHERuRfL._SX300_SY300_QL70_FMwebp_.jpg" alt="Blush" />
+      <div class="product-name">Maybelline New York Tattoo Play Pink Liquid Eyeliner - Punch, Upto 48 Hours Bold Color, Water-proof Eyeliner & Smudge-proof. Maybelline High-impact Color Liner, Vegan Formula</div>
+      <div class="product-price">Rs. 386.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 386.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41ElP7oKPcL._SX522_.jpg" alt="Blush" />
+      <div class="product-name">Maybelline New York Eyeliner, Intense Colour, Long-lasting, 36Hr wear, Lasting Drama Gel Eyeliner, Black</div>
+      <div class="product-price">Rs. 329.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 329.00</div>
+    </div>
+
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">kajal</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/d/b/dbeb4e88904330900424_1.jpg" alt="Bundle" />
+      <div class="product-name">Kay Beauty Waterproof 24 Hour Kajal - Spade Black</div>
+      <div class="product-price">Rs. 229.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 229.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/5/9/593680c773602641307_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">M.A.C In Extreme Dimension 24Hr Waterproof & Smudgeproof Kajal Eye Liner</div>
+      <div class="product-price">Rs. 900.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 900.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/6/e66913bMARSX00000385_3.jpg" alt="Eyeshadow" />
+      <div class="product-name">MARS Won't Smudge Won't Budge Kajal - Iceberg</div>
+      <div class="product-price">Rs. 249.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 249.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/a/4a35b51SUGAG00000032_1.jpg" alt="Glow Stick" />
+      <div class="product-name"></div>
+      <div class="product-price">Rs. 285.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 285.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/b/fb560f48901030606274_3.jpg" alt="Lipstick" />
+      <div class="product-name">Elle 18 Eye Drama Kajal, Super Black Matte Finish Deep Black</div>
+      <div class="product-price">Rs. 314.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 314.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/6/262c5adNYKAC00002147_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Highlighter" />
+      <div class="product-name">Nykaa GLAMOReyes Waterproof & Smudgeproof Colored Kajal Eyeliner Eye Pencil - Teal (Sea Green)</div>
+      <div class="product-price">Rs. 104.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 306.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/a/4/a4bed56PLUMX00000155_2.jpg" alt="Blush" />
+      <div class="product-name">Plum Eye-swear-by Kohl Kajal - Deep Black</div>
+      <div class="product-price">Rs. 223.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 223.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/c/cc4a238BLUEH00000391_1.jpg" alt="Blush" />
+      <div class="product-name">Blue Heaven Get Bold Pencil Kajal With Free Sharperner Or Comphor & Castor Oil - Black</div>
+      <div class="product-price">Rs. 60.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 60.00</div>
+    </div>
+
+  </div>
+</div>
+<!--CARDS-->
+<div class="explore-section" id="mask">
+  <div class="explore-title">Maskara</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/6/f/6fd8179MAYBE00000375_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Bundle" />
+      <div class="product-name">Maybelline New York Lash Sensational Sky High Mascara, 802 Very Black, Lengthening & Waterproof</div>
+      <div class="product-price">Rs. 439.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 439.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/9/4/949dfcaELFCO00000854_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">e.l.f. Cosmetics Lash & Roll Mascara - Black </div>
+      <div class="product-price">Rs. 675.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 675.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/4/e4b20f5MARSX00000419-new_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Eyeshadow" />
+      <div class="product-name">MARS Double Trouble Mascara</div>
+      <div class="product-price">Rs. 243.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 243.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/c/c/cc52d316902395395935-new25_4.jpg?tr=w-344,h-344,cm-pad_resize" alt="Glow Stick" />
+      <div class="product-name">Maybelline New York Lash Sensational Full Fan Effect Waterproof Mascara - Black</div>
+      <div class="product-price">Rs. 302.50 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 302.50</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/a/3a186b83614273601092-1.jpg" alt="Lipstick" />
+      <div class="product-name">Yves Saint Laurent Lash Clash Extreme Volume Mascara - Overnoir Black</div>
+      <div class="product-price">Rs. 3,200.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 3,200.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/0/d/0dc21ec8904245712921-az_1.jpg" alt="Highlighter" />
+      <div class="product-name">Nykaa Lash Talk Curl Power Waterproof Curling Mascara</div>
+      <div class="product-price">Rs. 279.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 279.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/0/f/0f9537a8904325005738_01.jpg" alt="Blush" />
+      <div class="product-name">Swiss Beauty Bold Eyes Super Lash Mascara Waterproof - Black</div>
+      <div class="product-price">Rs. 209.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 209.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/0/e0cc3b7CLINI00000317_1.jpg?tr=w-344,h-344,cm-pad_resize" alt="Blush" />
+      <div class="product-name">Clinique High Impact High-Fi Full Volume Mascara</div>
+      <div class="product-price">Rs. 2,338.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,338.00</div>
+    </div>
+
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">Eyeshadow</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/8/f897e18KAYBE00000721_1.jpg" alt="Bundle" />
+      <div class="product-name">Kay Beauty Multi Texture Eyeshadow Palette - Twilight</div>
+      <div class="product-price">Rs. 1,529.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,529.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/c/4cc62f76291106034271_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Huda Beauty Nude Obsessions Mini Eyeshadow Palette - Medium</div>
+      <div class="product-price">Rs. 2,650.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,650.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/f/9/f952968NYSWISSB00255_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">Swiss Beauty Ultimate 9 Pigmented Colors Eyeshadow Palette - Shade 02</div>
+      <div class="product-price">Rs. 249.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 249.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/0/709f1428906164191139_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Praush Beauty Omni Nude Eyeshadow Palette With 18 Stunning Shades</div>
+      <div class="product-price">Rs. 285.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 285.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/0/2020e17MARSX00000393_1.jpg" alt="Lipstick" />
+      <div class="product-name">MARS Dance Of Joy Eyeshadow Palette - 2</div>
+      <div class="product-price">Rs. 295.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 295.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/b/8/b874096609332299221_1.jpg" alt="Highlighter" />
+      <div class="product-name">e.l.f. Cosmetics Bite Size Eyeshadow - Berry Bad</div>
+      <div class="product-price">Rs. 300.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 300.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/0/f/0f9a3e68905823021756_1.jpg" alt="Blush" />
+      <div class="product-name">Daily Life Forever52 Color Me Out 50 Colors Eyeshadow Palette - CMO003</div>
+      <div class="product-price">Rs. 3,569.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,569.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/7/d/7d39d53INSIG00001210_1.jpg" alt="Blush" />
+      <div class="product-name">Insight Cosmetics Ready Set Glam Eyeshadow Palette - Blush Bash</div>
+      <div class="product-price">Rs. 181.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 181.00</div>
+    </div>
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">False Eyelashes</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/4/9/498eb3bMARSX00000426_1.jpg" alt="Bundle" />
+      <div class="product-name">MARS Fabulash Eyelashes - 06 Drag Queen</div>
+      <div class="product-price">Rs. 89.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 89.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/h/o/hoodie-lashes_1.jpg" alt="Glossy Balm" />
+      <div class="product-name">Huda Beauty Eazy Lash - Hoodie</div>
+      <div class="product-price">Rs. 1,800.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,800.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/2/6/26425a1NYPAC00000221_1.jpg" alt="Eyeshadow" />
+      <div class="product-name">PAC Tapered Lash - 213</div>
+      <div class="product-price">Rs. 243.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 243.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://images-static.nykaa.com/media/catalog/product/e/f/efdad6bNYKUROPS00007_1.jpg" alt="Glow Stick" />
+      <div class="product-name">Uroparis Human Hair Eyelashes - 55 / BLACK</div>
+      <div class="product-price">Rs. 300.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 300.87</div>
+    </div>
+  </div>
+</div>
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>

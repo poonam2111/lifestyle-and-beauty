@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+        /* new */
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .product-scroll-section {
+      padding: 2rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scroll-behavior: smooth;
+      /* Hide scrollbar on some browsers */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: #fff;
+      min-width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 1rem;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 0.5rem;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .product-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+    .product-price {
+      font-size: 0.9rem;
+      color: #198754;
+      margin: 0;
+    }
+    /* new end */
+  </style>
+
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- nav end -->
+
+<!-- new -->
+  <section class="product-scroll-section" style="background-color: rgb(249, 239, 226);">
+    <div class="container">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="scroll-container">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://www.bing.com/th?id=OPAC.APvNQsuq3sMjrA474C474&o=5&pid=21.1&w=148&h=148&rs=1&qlt=100&dpr=1.3&o=2&bw=6&bc=FFFFFF" alt="Hair Mask" />
+          </div>
+          <div class="product-name">Hair Mask</div>
+          <p class="product-price">₹289</p>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://th.bing.com/th/id/OIP.eNaNPOVDEtcKxissb3GHxgHaHa?w=208&h=209&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Hair Shampoo and Conditioner" />
+          </div>
+          <div class="product-name">Hair Shampoo and Conditioner</div>
+          <p class="product-price">₹497</p>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://yekacosmetics.in/wp-content/uploads/2022/06/main-1l-hair.jpg" alt="Hair Oil" />
+          </div>
+          <div class="product-name">Hair Oil</div>
+          <p class="product-price">₹356</p>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://onemg.gumlet.io/l_watermark_346,w_120,h_120/a_ignore,w_120,h_120,c_fit,q_auto,f_auto/mfda9jc8e8i2ikeoftqa.jpg" alt="Hair Serum" />
+          </div>
+          <div class="product-name">Hair Serum</div>
+          <p class="product-price">₹499</p>
+        </div>
+        <!-- Product Card 5 -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://i5.walmartimages.com/asr/e9c74797-acb6-43aa-84d7-d55ce1f6c9e9_1.dce0d941b436d216db8ff384fd06c90f.jpeg" alt="Hair Spray" />
+          </div>
+          <div class="product-name">Hair Spray</div>
+          <p class="product-price">₹589</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- new end -->
+
+<!--CARDS-->
+<div class="explore-section" id="hairmask">
+  <div class="explore-title">EXPLORE OUR LATEST HAIR MASK</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1089799/U1TXSok69-8901030882500_1.jpg" alt="HAIR MASK" />
+      <div class="product-name">LOVE beauty AND planet Argan Oil & Lavender Magic Hair Mask for Frizz Control (200 ml)</div>
+      <div class="product-price">RS. 540.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS.  540.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1137512/GgHJgpK9Le-1137512-1.jpg" alt="HAIR MASK" />
+      <div class="product-name">Dove 10 In 1 Deep Repair Treatment Hair Mask (120 ml)</div>
+      <div class="product-price">Rs. 224.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 224.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1103036/pMKktDQQr-1103036_1.jpg" alt="HAIR MASK" />
+      <div class="product-name">L'OREAL PROFESSIONNEL Absolut Repair Mask For Dry and Damaged Hair with Protein & Omega 9 (250 ml)</div>
+      <div class="product-price">Rs. 990.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 990.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1136508/pEa30UA0h--1136508-1.jpg" alt="HAIR MASK" />
+      <div class="product-name">LOVE beauty AND planet Bond Repair Hair Mask with Olive Oil & Peptide for Damaged Hair (200 ml)</div>
+      <div class="product-price">Rs. 522.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 522.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1137511/HT4LBdlKSQ-1137511_1.jpg" alt="HAIR MASK" />
+      <div class="product-name">LOVE beauty AND planet Rice Water & Angelica Seed Oil Hair Mask for Curly and Wavy Hair (200 ml)</div>
+      <div class="product-price">Rs. 475.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 475.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1098138/ZAjHf2oVR2N-1098138_1.jpg" alt="HAIR MASK" />
+      <div class="product-name">Kevin Murphy Hydrate-Me Masque Moisturizing And Smoothing Masque (200ml)</div>
+      <div class="product-price">Rs. 3,150.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 3,150.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1165189/9uvxD13z9c-1165189-1.jpg" alt="HAIR MASK" />
+      <div class="product-name">LOVE beauty AND planet Jojoba Oil, Hibiscus & Pentavitin Hydrate & Nourish Hair Mask (200 ml)</div>
+      <div class="product-price">Rs. 540.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 540.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/ZLfdBfqTt-Plum-Olive-and-Macadamia-mega-moisturizing-hair-mask-Repairs-DamageorSmoothens-HairorDry-Hair-(250ml).jpeg" alt="HAIR MASK" />
+      <div class="product-name">Plum Olive & Macadamia mega moisturizing hair mask Repairs Damage|Smoothens Hair|Dry Hair (250ml)</div>
+      <div class="product-price">Rs. 607.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 607.00</div>
+    </div>
+
+  </div>
+</div>
+
+    <div class="explore-section" id="shampoo">
+  <div class="explore-title">EXPLORE OUR LATEST HAIR SHAMPOO AND CONDITIONER</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Wishcare_TIRA002676/Update/COMBO_240531050055-TUU/COMBO_240531050055-TUU_1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">WishCare Multi Peptide Anti Hairfall Shampoo & Conditioner Combo Pack (250 ml +200 ml)</div>
+      <div class="product-price">Rs. 796.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 796.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/love-beauty-planet/COMBO_231117112936-PSO/0/Wj1ja4SM51-1089809_Combo_9-1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">LOVE beauty AND planet Natural Argan Oil And Lavender Smoothening Shampoo & Conditioner Combo</div>
+      <div class="product-price">Rs. 730.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 730.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1154604/Ib4NXMJo2o-1154604_1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">Matrix Professional Smooth Hair Combo -Anti-frizz Shampoo and Conditioner + Porosity Spray (3 pcs)</div>
+      <div class="product-price">Rs. 658.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 658.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Dove/1017047_Combo_16/1017047_Combo_16-1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">Tresemme Keratin Smooth XL Shampoo & Conditioner Combo</div>
+      <div class="product-price">Rs. 893.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 893.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira-Combo-Image-Updates/CATUPDATE_0996/COMBO_231026053550-UFV/COMBO_231026053550-UFV_1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">Biolage Smoothproof Vegan Shampoo and Conditioner Combo for Frizz-Free Hair (200 ml + 98 g)</div>
+      <div class="product-price">Rs. 510.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 510.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/love-beauty-planet/COMBO_231117112947-7LF/0/YODsPN2oMW-1089807_Combo_10-1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">LOVE beauty AND planet Onion Black Seed & Patchouli Hairfall Control Shampoo & Conditioner Combo</div>
+      <div class="product-price">Rs. 696.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 696.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Dove/TIRA006881/1018772_Combo_2/1018772_Combo_2_1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">Dove Intense Repair Hair Combo - Shampoo + Conditioner + Hair Mask</div>
+      <div class="product-price">Rs. 1,370.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,370.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/l-oreal-paris/COMBO_240306095958-ZSP/0/11DJlWxRAG-993297_combo_1-1.jpg" alt="SHAMPOO AND CONDITIONER" />
+      <div class="product-name">L'Oreal Paris Extraordinary Oil Hair Combo - Pack of 2 (Shampoo & Conditioner)</div>
+      <div class="product-price">Rs. 943.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 943.00</div>
+    </div>
+
+  </div>
+</div>
+
+   <div class="explore-section" id="hairoil">
+  <div class="explore-title">EXPLORE OUR LATEST HAIR OIL</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1086557/j0jykNYdL-1086557_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">Kama Ayurveda Bringadi Intensive Hair Treatment Oil (200ml)</div>
+      <div class="product-price">Rs. 1,795.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,795.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1123613/grWlu8PtO-1123613_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">Inde Wild Champi Hair Oil (50ml)</div>
+      <div class="product-price">Rs. 873.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 873.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1035740/_rkUviK1zX-1035740_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">Soulflower Pure And Natural Rosemary Lavender Healthy Hair Oil (120ml)</div>
+      <div class="product-price">Rs. 247.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 247.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1113879/LKeRp_5PRn-8906034883447_2.jpg" alt="HAIR OIL" />
+      <div class="product-name">Brillare Argan Oil For Dry, Frizzy Hair (100ml)</div>
+      <div class="product-price">Rs. 416.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 416.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Inde_Wild/TIRA004150/1123613_combo_1/1123613_combo_1-1.jpg" alt="HAIR OIL" />
+      <div class="product-name">Inde Wild Champi Oil & Moonlight Scalp Serum Combo</div>
+      <div class="product-price">Rs. 1,825.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 1,825.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1096359/tVSXEO7g-k-1096359_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">WishCare 100% Pure Cold Pressed Castor Oil (200ml)</div>
+      <div class="product-price">Rs. 220.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 220.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/max-care/1057857/0/JvBaGCNEcZ-IO8XY170-h-8908008452048_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">Max Care Cold Pressed Virgin Coconut Oil Wide Mouth 500 ml</div>
+      <div class="product-price">Rs. 465.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 465.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1096360/jRiPaPdPYF-1096360_1.jpg" alt="HAIR OIL" />
+      <div class="product-name">WishCare 100% Pure Cold Pressed Jojoba Oil (100ml)</div>
+      <div class="product-price">Rs. 497.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 497.00</div>
+    </div>
+
+  </div>
+</div>
+
+   <div class="explore-section" id="hairs">
+  <div class="explore-title">EXPLORE OUR LATEST HAIR SPRAY</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1079342/rA0NXzM9n3-1079342_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">BBlunt Hot Shot Heat Protection Mist With Grapeseed Oil & Provitamin B5 (150ml)</div>
+      <div class="product-price">Rs. 424.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 424.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/resize-w:1080/Tira_Combos/Bblunt/1079335_Combo_8/1079335_Combo_8-1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">BBlunt Hot Shot Hair Styling Combo</div>
+      <div class="product-price">Rs. 933.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 933.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1085715/xFwYePl3Q-7290015295048_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Moroccanoil Luminious Hair Spray - Extra Strong (330ml)</div>
+      <div class="product-price">Rs. 2,610.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,610.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1057001/dY6DcUoy_x-1057001_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Wella Professionals Eimi Thermal Image Heat Protection Spray (150ml)</div>
+      <div class="product-price">Rs. 630.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 630.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1056869/l02uD6og3z-1056869_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Wella Professionals Eimi Mistify Me Strong Hair Spray (300ml)</div>
+      <div class="product-price">Rs. 630.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 630.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1130978/KBQiQNdoro-1130978_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Schwarzkopf Professional OSiS+ Flatliner Heat Protection Spray (200ml)</div>
+      <div class="product-price">Rs. 1,056.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,056.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1133639/H5VfCgGcZ3-1133639_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Streax Heat Protection Hair Styling Spray (100ml)</div>
+      <div class="product-price">Rs. 272.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 272.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1076517/StzA-tIXfY-8032274123606_1.jpg" alt="HAIR SPRAY" />
+      <div class="product-name">Milk Shake Lifestyling Amazing Hair Spray (200ml)</div>
+      <div class="product-price">Rs. 1,900.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,900.00</div>
+    </div>
+
+  </div>
+</div>
+
+  <div class="explore-section" id="serum">
+  <div class="explore-title">EXPLORE OUR LATEST HAIR SERUM</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1112711/Dv-BCfsBxF-1112711_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">LOVE beauty AND planet Argan Oil & Lavender Hair Serum (50ml)</div>
+      <div class="product-price">Rs. 360.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 360.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/973033/6Kl4ZgGSfq-973033_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">L'Oreal Paris Elseve Extraordinary Oil Serum (30 ml)</div>
+      <div class="product-price">Rs. 299.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 299.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1086247/D39ZSpTeM-1086247_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">WishCare Hair Growth Serum Concentrate (30ml)</div>
+      <div class="product-price">Rs. 699.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 699.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1162666/uNCrNc_yry1-1162666_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">Pilgrim Spanish Rosemary Water With Biotin For Thicker Stronger Hair (100 ml)</div>
+      <div class="product-price">Rs. 198.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 198.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1177241/yuxeQCrotr5-1177241-1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">Dove Peptide Bond Strength Bi-phasic Oil+Serum (50 ml)</div>
+      <div class="product-price">Rs. 292.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 292.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1121068/LS-2DEEzB-1121068_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">Minimalist Maleic Bond Repair Complex 5% Hair Serum For Hair Smoothing Treats Split Ends & Hair Fall (50ml)</div>
+      <div class="product-price">Rs. 499.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 499.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1165808/CsibqQrjh-1165808_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">L’Oréal Paris Hyaluron Moisture Hair Serum with hyaluronic acid for bouncy,frizz-free hair (40ml)</div>
+      <div class="product-price">Rs. 211.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 211.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1103001/o3lHjA93r-1103001_1.jpg" alt="HAIR SERUM" />
+      <div class="product-name">Biolage 6-In-1 Smoothproof Deep Smoothening Serum (100ml)</div>
+      <div class="product-price">Rs. 350.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 350.00</div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+
+  <style>
+     
+body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+
+
+    .carousel-inner{
+      margin-top: 2rem;
+    }
+
+    .slider-wrapper {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .product-row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+    }
+
+    .product-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-card {
+      cursor: pointer;
+      margin-bottom: 2rem;
+      margin-left: 0.6rem;
+      width: 220px;
+      flex-shrink: 0;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      padding: 15px;
+      position: relative;
+    }
+
+    .tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #e5efff;
+      color: #007bff;
+      padding: 3px 8px;
+      font-size: 11px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .heart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .brand {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .price del {
+      color: #999;
+      margin-left: 5px;
+      font-size: 13px;
+    }
+
+    .discount {
+      font-size: 12px;
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    .size-options {
+      display: flex;
+      gap: 10px;
+    }
+
+    .size-btn {
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .size-btn:hover {
+      border-color: #007bff;
+      color: #007bff;
+    }
+
+     body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+     
+    }
+
+    h2 {
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+
+    .category-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .category {
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .category img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .category img:hover {
+      transform: scale(1.05);
+    }
+
+    .category-title {
+      margin-top: 12px;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-top: 30px;
+      letter-spacing: 2px;
+    }
+     
+    .section-title{
+      color: #d54747;
+    }
+    .testimonial-section {
+      background-color: #cda1a1;
+      color: #0d1b37;
+      padding: 100px 50px;
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 8rem;
+    }
+
+    .testimonial-img {
+      width: 30px;
+      height: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 30px;
+    }
+
+    .quote {
+      font-weight: bold;
+      font-size: 4rem;
+    }
+
+    .location {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+   
+    .card-container {
+      display: flex;
+      gap: 70px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+      cursor: pointer;
+      background-color: #fff;
+      width: 350px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      color: #333;
+    }
+    
+    .video-section {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    .video-half {
+      position: relative;
+      width: 50%;
+      overflow: hidden;
+    }
+
+    .video-half video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .divider {
+      width: 3px;
+      background-color: black;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .shop-button {
+      margin-top: 20px;
+      padding: 20px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+   
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 50px 0 30px;
+    }
+
+    .container-s {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px 20px;
+    }
+
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 280px;
+      text-align: center;
+      position: relative;
+      background: #fff;
+    }
+
+    .card img.profile {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .verified {
+      color: #1da1f2;
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+
+    .stars {
+      color: #92c000;
+      font-size: 1.2rem;
+      margin: 15px 0 10px;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 0.92rem;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .recommend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .recommend img {
+      width: 50px;
+      height: auto;
+    }
+
+    .recommend-text {
+      text-align: left;
+      font-size: 0.8rem;
+    }
+
+    .recommend-text b {
+      color: #f50057;
+    }
+
+    .card-r{
+  min-height: 450px; /* Or any height you prefer */
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .card-img-container img {
+    width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    display: block;
+    height: 290px;
+    object-fit: cover;
+  }
+
+  .card-img-container img.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .card-img-container:hover img.img-hover {
+    opacity: 1;
+  }
+
+  .card-img-container:hover img.img-main {
+    opacity: 0;
+  }
+
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+</style> 
+
+
+       
+<div id="thankYouMsg" style="display:none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #3e8e4d; color: white; padding: 12px 24px; border-radius: 8px; z-index: 9999;">
+  Thank you for purchasing!
+</div>
+<script>
+  function showThankYou() {
+    const msg = document.getElementById("thankYouMsg");
+    msg.style.display = "block";
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 2500); // message hides after 2.5 seconds
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const buyButtons = document.querySelectorAll(".btn-dark");
+    buyButtons.forEach(function (button) {
+      button.addEventListener("click", showThankYou);
+    });
+  });
+</script>
+
+
+    </head>
+  <body>
+  
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--slide bar-->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://cdn-eu.dynamicyield.com/api/9879321/images/fbc50b122529.jpg?dpr=1" class="d-block w-100" alt="first">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn-eu.dynamicyield.com/api/9879321/images/ab24e537083b.jpg?dpr=1" class="d-block w-100" alt="second">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn-eu.dynamicyield.com/api/9879321/images/5545cb2306c2.jpg?dpr=1" class="d-block w-100" alt="third">
+    </div>
+    <div class="carousel-item">
+      <img src="https://cdn-eu.dynamicyield.com/api/9879321/images/f27249b27792.jpg?dpr=1" class="d-block w-100" alt="third">
+    </div>
+  </div>
+</div>
+
+<!--cards section-->
+<div class="slider-wrapper">
+  <div class="product-row" id="cardRow">
+
+    <!-- Product Cards -->
+    <div class="product-card">
+      <div class="tag">NEW</div>
+      <div class="heart">♡</div>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1107018/-DjjeRbolc-8906087775690_1.jpg" alt="Product 1">
+      <div class="brand">The Derma Co</div>
+      <div class="product-title">10% Vitamin C Serum</div>
+      <div class="price">₹286 <del>₹349</del></div>
+      <div class="discount">(18% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">10 ml</div>
+        <div class="size-btn">30 ml</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="tag">DERM APPROVED</div>
+      <div class="heart">♡</div>
+      <img src="https://discoverpilgrim.com/cdn/shop/files/1_d8b18d78-cd69-4e41-8ecd-070ab464ddb8.jpg?v=1750914712&width=400" alt="Product 2">
+      <div class="brand">The Derma Co</div>
+      <div class="product-title">5% Vitamin C Ultra Light Gel Sunscreen SPF 60</div>
+      <div class="price">₹791 <del>₹899</del></div>
+      <div class="discount">(12% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">20 ml</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="tag">NEW</div>
+      <div class="heart">♡</div>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1154593/ilW0Oe-6EW-1154593_1.jpg" alt="Product 3">
+      <div class="brand">Ordinary</div>
+      <div class="product-title">Niacinamide 10% + Zinc 1%</div>
+      <div class="price">₹521 <del>₹695</del></div>
+      <div class="discount">(25% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">30 ml</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="tag">Axis-Y</div>
+      <div class="heart">♡</div>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/Yw_h2h7EO-Axis-Y-Dark-Spot-Correcting-Glow-Serum-(50-ml).jpeg" alt="Product 4">
+      <div class="brand">Axis-Y</div>
+      <div class="product-title">Axis-Y Dark Spot Correcting Glow Serum (50 ml)</div>
+      <div class="price">₹314 <del>₹349</del></div>
+      <div class="discount">(10% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">50 g</div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="tag">Bestseller</div>
+      <div class="heart">♡</div>
+      <img src="https://discoverpilgrim.com/cdn/shop/files/Red-Vine-Face-Cream-SPF30-Front-white-background.1080x1080.jpg?v=1752497757&width=400" alt="Product 4">
+      <div class="brand">Youthful Glow</div>
+      <div class="product-title">Red Vine Face Cream SPF 30</div>
+      <div class="price">₹314 <del>₹349</del></div>
+      <div class="discount">(10% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">50 g</div>
+      </div>
+    </div>
+<div class="product-card">
+      <div class="tag">DERM APPROVED</div>
+      <div class="heart">♡</div>
+      <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:494/1154578/T-NoHmRgNr-1154578_1.jpg" alt="Product 4">
+      <div class="brand">The Derma Co</div>
+      <div class="product-title">Pore Minimizing Moisturizer</div>
+      <div class="price">₹314 <del>₹349</del></div>
+      <div class="discount">(10% Off)</div>
+      <div class="size-options">
+        <div class="size-btn">50 g</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--third section-->
+<h2>SHOP GLOW RECIPE BY CATEGORY</h2>
+
+  <div class="category-container">
+   <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/acne_cleanser.jpg?v=1737977652&width=533" alt="Shop All"></a>
+      <div class="category-title">SHOP ALL</div>
+    </div>
+    <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/0.1___retinal_serum.jpg?v=1737977239&width=533" alt="Cleansers"></a>
+      <div class="category-title">CLEANSERS</div>
+    </div>
+   <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/card1_3f19dc89-5d3b-4d9b-965c-566cbcc72a36.jpg?v=1751286609&width=533" alt="Toners & Mists"></a>
+      <div class="category-title">TONERS & MISTS</div>
+    </div>
+   <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/Card1_57a59206-281c-4888-ae04-e9a3de75d91a.jpg?v=1734606575&width=533" alt="Serums"></a>
+      <div class="category-title">SERUMS</div>
+    </div>
+   <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/dewy_prep.jpg?v=1737978950&width=533" alt="Moisturisers"></a>
+      <div class="category-title">MOISTURISERS</div>
+    </div>
+   <a href="skincare.html"><div class="category">
+      <img src="https://letshyphen.com/cdn/shop/files/Card_1_2.jpg?v=1728908998&width=533" alt="Gifts"></a>
+      <div class="category-title">GIFTS</div>
+    </div>
+  </div>
+
+  <div class="section-title">Raghita's BESTSELLERS</div>
+
+
+<!--second widges-->
+
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="https://plumgoodness.com/cdn/shop/files/2_Nia_RiceWaterGelCream_ListingImage.webp?v=1732859412&width=460" alt="Complexion Cheat Sheet">
+      <div class="card-content">
+        <h3>2% Niacinamide & Rice Water Brightening Gel Moisturizer</h3>
+        <p>2x hydration | Brightens skin in 2 Weeks | Non-Greasy all skin types</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="https://plumgoodness.com/cdn/shop/products/CandyMeltsVeganLipBalm_MelonBubble-Yum_02.jpg?v=1689139483&width=460" alt="Fenty Artistry Tips">
+      <div class="card-content">
+        <h3>Candy Melts Vegan Lip Balm | Melon Bubble-Yum</h3>
+        <p>Nourishes & Protects | Sheer-Tint | Velvety Smooth</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="https://plumgoodness.com/cdn/shop/products/5.CWTMask-2.jpg?v=1689139645&width=460" alt="Rihanna's Looks">
+      <div class="card-content">
+        <h3>Chamomile & White Tea Glow-Getter Face Mask</h3>
+        <p>Anti-Inflammatory | Tightens Pores | Soothes Skin</p>
+      </div>
+    </div>
+  </div>
+
+<!--second slidebar-->
+
+<div class="video-section">
+  <div class="video-half">
+    <video src="third.mp4" autoplay muted loop></video>
+    <div class="overlay-text">
+      Sale <br> UP TO 40% OFF
+      <br><button class="shop-button">Shop Now</button>
+    </div>
+  </div>
+  <div class="video-half">
+    <video src="second.mp4" autoplay muted loop></video>
+  </div>
+</div>
+
+<!--items-->
+<!-- cards -->
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#sun"><div class="card-img-container">
+          <img src="https://tse1.explicit.bing.net/th/id/OIP.ZTbkF3o2xsUe_6qn2OvXPAHaHa?w=1080&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top img-main" alt="Front Image">
+          <img src="https://th.bing.com/th/id/OIP.ifNtExDM_gdUTMLv-5lywQHaHa?w=193&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Dot & Key Watermelon Cooling Sunscreen SPF 50+ PA++++</h5>
+          <p class="card-text text-muted">INSTANTLY COOLS & HYDRATES SKIN</p>
+          <p class="fw-bold text-primary">₹499</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+     <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#cre"><div class="card-img-container">
+          <img src="https://th.bing.com/th/id/R.2d61cc07dc9a3d34b19078200f281e6a?rik=VQCEUXdW4R9peQ&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f0019%2f3177%2f1973%2fproducts%2fEye-Cream_1200x1200.jpg%3fv%3d1618917100&ehk=33OMMcpjKfE5%2bv8IBxKcqfw5ikP9vWaRC9mNzrUoCOI%3d&risl=&pid=ImgRaw&r=0" class="card-img-top img-main" alt="Front Image">
+          <img src="https://th.bing.com/th/id/OIP.2nvgRbinqtUTu-MV6_WkMQHaHa?w=179&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Alya Skin Pink Pearl Illuminate Eye Cream</h5>
+          <p class="card-text text-muted">Dark Circle Minimizer </p>
+          <p class="fw-bold text-primary">₹4,347</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#tone"><div class="card-img-container">
+          <img src="https://www.glowrecipe.com/cdn/shop/files/HOMEPAGE_IMAGERY_BANNERS_CATEGORIES_HOMEPAGE_BANNER_IMAGERY-1_copy_2700x.jpg?v=1698081748" class="card-img-top img-main" alt="Front Image">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.z4L4ACDR_3qKNX89HCF0qwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Glow Recipe Watermelon Face Toner</h5>
+          <p class="card-text text-muted">Hydrating Toner with Cactus Water</p>
+          <p class="fw-bold text-primary">₹999</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#clean"><div class="card-img-container">
+          <img src="https://s2.konvy.com/static/team/2023/0601/2023060114272178107.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://bbpcdn.pstatic.gr/bpimg36/9hnlG/1R3XQ5_SX2285Y1200/1700223649/estee-lauder-nutritious-2-in-1-foam-cleanser-125ml.webp" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Estee Lauder Nutritious 2-In-1 Foam Cleanser</h5>
+          <p class="card-text text-muted">Foam Cleanser with Niacinamide for Pore </p>
+          <p class="fw-bold text-primary">₹3,300</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 5 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#ser"><div class="card-img-container">
+          <img src="https://www.cassandrabankson.com/cdn/shop/articles/s2698348-av-9-zoom_2000x.jpg?v=1694995028" class="card-img-top img-main" alt="Front Image">
+          <img src="https://ts4.mm.bing.net/th?id=OIP.5VxP061MHustAa275L3S-AHaHa&pid=15.1" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">The Ordinary Soothing & Barrier Support Serum</h5>
+          <p class="card-text text-muted">A multi-active serum designed to repair & strengthen the skin barrier</p>
+          <p class="fw-bold text-primary">₹2,299</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 6 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#mois"><div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/bd/62/f1/bd62f15d4257e3f1557985be1b577947.jpg" class="card-img-top img-main" alt="Front Image">
+          <img src="https://skinorac.org/wp-content/uploads/2023/08/vitamin_b5.png" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Minimalist Vitamin B5 100% Oil-Free Moisturizer For Oily Skin</h5>
+          <p class="card-text text-muted"> Moisturizer Vitamin B5 100% Oil-Free For Oily Skin</p>
+          <p class="fw-bold text-primary">₹2,900</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 7 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#sheet"><div class="card-img-container">
+          <img src="https://1.bp.blogspot.com/-sICFehJeVzE/YabgQTtxhiI/AAAAAAABp4U/Ef32K58Cn5034OKlM82SocTrtx5RrJmoQCLcBGAsYHQ/s2048/Garnier%2BSkinActive%2BBiodegradeable%2BSheet%2BMask%2BReview%2B%25287%2529.JPG" class="card-img-top img-main" alt="Front Image">
+          <img src="https://th.bing.com/th?id=OPAC.0pgoeb%2bkavdgnA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Garnier Sakura Glow Hydrating Sheet Mask, 28G</h5>
+          <p class="card-text text-muted">Discover the Sakura Glow sheet mask by Garnier Skin Naturals </p>
+          <p class="fw-bold text-primary">₹2,452</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 8 -->
+   <div class="col-sm-6 col-md-4 col-lg-3 h-100">
+      <div class="card-r h-100 shadow-sm border-0">
+        <a href="skincare.html#lipi"><div class="card-img-container">
+          <img src="https://imgmedia.lbb.in/media/2022/12/6396b83cbbceec418b7fbe0f_1670821948401.png" class="card-img-top img-main" alt="Front Image">
+          <img src="https://th.bing.com/th/id/R.b3ce1cc9e024be098b259f998e436058?rik=cj%2byuHt3IRMS2Q&riu=http%3a%2f%2fcdn.grofers.com%2fapp%2fimages%2fproducts%2fsliding_image%2f495451a.jpg%3fts%3d1687502778&ehk=iINvQjnhFNigdlDDo4TCxExA7A97NU8yrMHC9H0S7fU%3d&risl=&pid=ImgRaw&r=0" class="card-img-top img-hover" alt="Hover Image"></a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Mamaearth Nourishing Tinted 100% Natural Lip Balm </h5>
+          <p class="card-text text-muted">Experience the perfect blend of nourishment</p>
+          <p class="fw-bold text-primary">₹259</p>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between">
+         <button class="btn btn-outline-dark add-to-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+          <button class="btn btn-dark">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- card end -->
+    <!--  -->
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar bg-white shadow-lg">
+  <div class="cart-header d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+    <h5 class="m-0">🛒 Your Cart</h5>
+    <button class="btn-close" onclick="closeCartSidebar()"></button>
+  </div>
+  <div class="cart-body p-3">
+    <ul id="cartItems" class="list-unstyled mb-0">
+      <!-- Items will appear here -->
+    </ul>
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCartSidebar()"></div>
+
+<style>
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    z-index: 1050;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .cart-sidebar.open {
+    right: 0;
+  }
+
+  .cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+    display: none;
+  }
+
+  .cart-overlay.show {
+    display: block;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+    addToCartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const card = button.closest(".card-r"); // Use .card-r not .card
+        const title = card.querySelector(".card-title")?.innerText || "No title";
+        const price = card.querySelector(".text-primary")?.innerText || "No price";
+
+        addToCart(title, price);
+        openCartSidebar();
+      });
+    });
+  });
+
+  function addToCart(title, price) {
+    const cartItems = document.getElementById("cartItems");
+
+    const li = document.createElement("li");
+    li.classList.add("mb-2", "border-bottom", "pb-2");
+    li.innerHTML = `<strong>${title}</strong><br><span class="text-muted">${price}</span>`;
+
+    cartItems.appendChild(li);
+  }
+
+  function openCartSidebar() {
+    document.getElementById("cartSidebar").classList.add("open");
+    document.getElementById("cartOverlay").classList.add("show");
+  }
+
+  function closeCartSidebar() {
+    document.getElementById("cartSidebar").classList.remove("open");
+    document.getElementById("cartOverlay").classList.remove("show");
+  }
+</script>
+
+    <!--  -->
+
+<!--CUSTOMER REVIEW-->
+<h1>Consumer Love</h1>
+
+<div class="container-s">
+  <!-- Card 1 -->
+  <div class="card">
+    <img src="https://www.dotandkey.com/cdn/shop/files/Ellipse_147_7d95a5d4-b558-4e72-93b5-3e2dc6d8fa6b.png?v=1724927178&width=180" alt="Megha" class="profile">
+    <div class="name">MEGHA PARASHAR <span class="verified">✔️</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="title">Just Love It!</div>
+    <div class="desc">
+      I've been using Dot & Key Vitamin C Sunscreen for a year now. It's lightweight & quick-absorbing. Reduces dullness too with a dewy finish. A must-buy!
+    </div>
+    <div class="recommend">
+      <img src="https://www.dotandkey.com/cdn/shop/files/1_1b15b22c-6400-4cea-9120-5a4430a9f59b.png?v=1724499332&width=140" alt="Product">
+      <div class="recommend-text">
+        Megha Recommends This Product<br><b>SHOP NOW >></b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <img src="https://www.dotandkey.com/cdn/shop/files/Ellipse_144_ecb6ec6b-8643-4238-b64d-ec063dfb80b9.png?v=1724927331&width=180" alt="Reshma" class="profile">
+    <div class="name">RESHMA SATHEESH <span class="verified">✔️</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="title">Blends In No Time</div>
+    <div class="desc">
+      This is my third bottle of using this sunscreen. Zero white cast & non-pilling formula... just love it!
+    </div>
+    <div class="recommend">
+      <img src="https://www.dotandkey.com/cdn/shop/files/2_2b56e93e-4f36-4d94-a7bf-604fbb204fe0.png?v=1724499332&width=140" alt="Product">
+      <div class="recommend-text">
+        Reshma Recommends This Product<br><b>SHOP NOW >></b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <img src="https://www.dotandkey.com/cdn/shop/files/Ellipse_145.png?v=1724927412&width=180" alt="Muskan" class="profile">
+    <div class="name">MUSKAN CHOWDHURY <span class="verified">✔️</span></div>
+    <div class="stars">★★★★★</div>
+    <div class="title">No More Dry Skin</div>
+    <div class="desc">
+      Ceramide in this moisturizer protects the natural barrier of my skin while deeply moisturizing. It also soothes redness & dry skin.
+    </div>
+    <div class="recommend">
+      <img src="https://www.dotandkey.com/cdn/shop/files/3_e6b82126-19fc-4280-a931-48f0b1fc9465.png?v=1724499332&width=140" alt="Product">
+      <div class="recommend-text">
+        Muskan Recommends This Product<br><b>SHOP NOW >></b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <img src="https://www.dotandkey.com/cdn/shop/files/Ellipse_146_8aee1a82-8613-49a9-b4eb-5e07b4be72ba.png?v=1724927486&width=180" alt="Sonal" class="profile">
+    <div class="name">SONAL SAREEN</div>
+    <div class="stars">★★★★★</div>
+    <div class="title">It Works!</div>
+    <div class="desc">
+      I have been using this moisturizer for 2 months now. It is non-sticky and my skin looks visibly brighter.
+    </div>
+    <div class="recommend">
+      <img src="https://www.dotandkey.com/cdn/shop/files/image_725_471a930f-078e-4302-8916-24ad55bafbdf.png?v=1719937644&width=140" alt="Product">
+      <div class="recommend-text">
+        Sonal Recommends This Product<br><b>SHOP NOW >></b>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>

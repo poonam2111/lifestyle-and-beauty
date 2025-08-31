@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New ex</title>
+  <!-- ✅ Bootstrap 5.3.2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- ✅ Bootstrap 5.3.2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: white;
+    }
+
+    .text-color {
+      color: #fff
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+/* new */
+ .product-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .product-card {
+    position: relative;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .product-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-card:hover .product-img {
+    opacity: 0.6;
+  }
+
+  .product-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    width: 80%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-card:hover .product-info {
+    opacity: 1;
+  }
+
+  .product-info h6 {
+    margin: 0;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .product-info p {
+    margin: 5px 0;
+    color: #fff;
+  }
+/* new end */
+  </style>
+
+</head>
+
+<body>
+
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- nav end -->
+
+<!-- new -->
+ <!-- Horizontal Scroll with Hover Effect -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h4 class="fw-bold mb-4">🛍️ Shop by Product</h4>
+
+    <div class="product-scroll d-flex overflow-auto gap-5 pb-3">
+      <!-- Product 1 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://th.bing.com/th/id/OIP.DvHr3fj5XcVlCv2PmF_EXAHaHa?w=173&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" class="product-img" alt="Sandals" />
+        <div class="product-info">
+          <h6 class="text-white">Sandals</h6>
+          <p class="text-white">₹4,999</p>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://i1.wp.com/highheelsdaily.com/wp-content/uploads/2017/12/IMG_0507.jpg?fit=1246%2C1280" class="product-img" alt="Heels" />
+        <div class="product-info">
+          <h6 class="text-white">Heels</h6>
+          <p class="text-white">₹7,759</p>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/9/f/9f92946POSTC00000885_.jpg" class="product-img" alt="Flats" />
+        <div class="product-info">
+          <h6 class="text-white">Flats</h6>
+          <p class="text-white">₹1,199</p>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.QqlvBl4GQw_M8RhnkwpZeQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" class="product-img" alt="Shoes" />
+        <div class="product-info">
+          <h6 class="text-white">Shoes</h6>
+          <p class="text-white">₹5,585</p>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://img.kwcdn.com/product/1dec4a1170/5162f26f-308e-4081-8604-e86edbc4ffe1_800x800.jpeg.a.jpg" class="product-img" alt="Sneakers" />
+        <div class="product-info">
+          <h6 class="text-white">Sneakers</h6>
+          <p class="text-white">₹9,000</p>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card text-center flex-shrink-0 position-relative">
+        <img src="https://tse1.explicit.bing.net/th/id/OIP.ydq1B3434Tm_9NCTQ6zlFgAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" class="product-img" alt="Slippers" />
+        <div class="product-info">
+          <h6 class="text-white">Slippers</h6>
+          <p class="text-white">₹987</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- new end -->
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST SANDALS</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61HgCFBzkcL._SY625_.jpg" alt="SANDALS" />
+      <pre>                      </pre>
+      
+      <div class="product-name">Marc Loire Women's Slip On Shimmer Peep Toes Block Heel Fashion Sandals for Casual, Outdoor, Party and Holidays</div>
+      <div class="product-price">Rs. 995.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 995.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/617+KC3cx7L._SY695_.jpg" alt="SANDALS" />
+      <pre>                     </pre>
+      <div class="product-name">Ladies Hub Stylish Women's Wedge Sandals Platform Heels with Extra Soft Cushioned Footbed, Ankle Strap & Open Toe Style</div>
+      <div class="product-price">Rs. 899.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 899.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61ZLrNSnihL._SY695_.jpg" alt="SANDALS" />
+      <div class="product-name">CANVI Stylish | Fancy | Comfortable Women's Ethnic Flats Sandals for Women and Girl.</div>
+      <div class="product-price">Rs. 579.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 579.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61BoIH7YrRL._SY695_.jpg" alt="SANDALS" />
+      <div class="product-name">TRASE Stylish Wedges Sandals For Women, Sandals For Woman, Sandals For Women Stylish, Footwear For Women Daily Use, Comfortable Sandals For Women (43174)</div>
+      <div class="product-price">Rs. 979.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 979.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/712NDxkKiNL._SY695_.jpg" alt="SANDALS" />
+      <pre>                 </pre>
+      <pre>                     </pre>
+      <pre>                     </pre>
+      <div class="product-name">CANVI Stylish | Fancy | Comfortable Slide Sandals Slip On Flat Flip Flop Thong Sandals Casual Sandals Ethnic Flats Sandals for Women and Girl</div>
+      <div class="product-price">Rs. 529.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 529.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51bhINyn0PL._SY695_.jpg" alt="SANDALS" />
+      <div class="product-name">Shoetopia Women's Flats with Side Buckle | Stylish Comfortable Slip-On Ballerina Shoes for Women & Girls | Casual & Office</div>
+      <div class="product-price">Rs. 499.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 499.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51+bHEE4AzL._SY695_.jpg" alt="SANDALS" />
+      <pre>                     </pre>
+      <div class="product-name"> Stylish Flat | Lightweight Comfortable Slip-On Sandals for Women | Ladies Footwear</div>
+      <div class="product-price">Rs. 779.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 779.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/512tNz7LHtL._SY695_.jpg" alt="SANDALS" />
+      <pre>                     </pre>
+      <div class="product-name">Nowry Women Stylish Fashion Sandal For Party & Wedding/Casual Sandals For Women's & Girls</div>
+      <div class="product-price">Rs. 279.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 279.00</div>
+    </div>
+
+  </div>
+</div>
+
+    <div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST HEELS</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51Ey8HvlkXL._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">JM LOOKS Stylish Embellished Kitten Heels Sandal For Women & Girls | Pencil Heels | Stiletto Heels |</div>
+      <div class="product-price">Rs. 649.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 649.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51wokvLNorL._SY695_.jpg" alt="HEELS" />
+      <pre>                   </pre>
+      <div class="product-name">Marc Loire Women's Slip on Casual Solid Heels</div>
+      <div class="product-price">Rs. 1,090.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,090.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51Qjl83X-CL._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">SilverArrow Women's Twilight Drift Heeled Block Heel |Fashion Sandals |Toe Strap | Design Perfect for Casual/Outdoor/Party</div>
+      <div class="product-price">Rs. 559.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 559.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/517cACR+wOL._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">TRASE Block Heels Sandals For Women, Dusky Stylish & Comfortable Footwear</div>
+      <div class="product-price">Rs. 899.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 899.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51XDVQ0sBnL._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">SilverArrow Style Fancy Trending and Comfort Block Heel Sandal Mule Bellies Sandal for Womens and Girls Black</div>
+      <div class="product-price">Rs. 629.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 629.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51ReR-Tq0bL._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">Carlton London Women Stylish Slipon Pump Shoes with Block Heels, Pointed Toe for Party and Formal Occasions</div>
+      <div class="product-price">Rs. 1,349.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,349.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51MM-1gvL1L._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">Shoetopia Womens/Girls Black Party Slim Heeled Sandals-EU39</div>
+      <div class="product-price">Rs. 599.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 599.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61Vyd8GzN-L._SY695_.jpg" alt="HEELS" />
+      <div class="product-name">Shoetopia Stylish Strappy Block Heels for Women – Open Toe Ankle Strap Sandals</div>
+      <div class="product-price">Rs. 699.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 699.00</div>
+    </div>
+    
+  </div>
+</div>
+
+   <div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST FLATS/SLIPPERS</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71-bWsEMbXS._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <pre> </pre>
+      <div class="product-name"> House Slipper for Women's Care Dr Orthopaedic Super Comfort Fitting Flat Cushion Chappal Flip-Flop for Ladies & Girl’s</div>
+      <div class="product-price">Rs. 367.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 367.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61HKWBa1YpL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <div class="product-name"> Rest Doctor Slippers for Women Orthopedic Non Slip Lightweight Comfortable Flat Casual Stylish Dr Chappals and House Flip flops For Ladies and Girl’s</div>
+      <div class="product-price">Rs. 398.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 398.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/81W5efdudAL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <pre>   </pre>
+      <div class="product-name">YOHO Bubbles Women Ortho slippers | Soft comfortable and stylish flip flop slippers for Women in exciting colors |Lightweight |</div>
+      <div class="product-price">Rs. 496.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 496.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/7171aJgq7aL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <pre>                             </pre>
+      <div class="product-name">YOHO Marble Slippers for Women | Cushioned Slippers| Lightweight| Waterproof</div>
+      <div class="product-price">Rs. 539.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 539.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41ynC3XScLL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <div class="product-name">Bata Women Flat Flats</div>
+      <div class="product-price">Rs. 539.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 539.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41OmvxhhuiL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <div class="product-name">Bata Women's thongs</div>
+      <div class="product-price">Rs. 473.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 4073.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/41gyVA9LTdL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <div class="product-name">Bata Women's flip flop</div>
+      <div class="product-price">Rs. 490.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 490.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/418f3XNTJYL._SY695_.jpg" alt="FLATS/SLIPPERS" />
+      <div class="product-name">Bata Women's Slip-On Sandal</div>
+      <div class="product-price">Rs. 539.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 539.00</div>
+    </div>
+    
+  </div>
+</div>
+
+   <div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST SHOES</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/611BGUjlgxL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss Heel 001 Slip-on Loafers for Women | Comfortable & Stylish Block Heeled | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,594.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,594.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61OKlCMbksL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss 004 Slip-on Loafers for Women | Comfortable & Stylish Flat | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,483.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,483.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61wBcxNYRvL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss Comfortable Slip On Semi Casual Loafer for Women | Stylish Fashion Moccasins Range | Cushioned Footbed Finish | Flexible | Style & All-Purpose | Formal Office Wear Shoe</div>
+      <div class="product-price">Rs. 1,117.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,117.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71BYp5enhDL._SY625_.jpg" alt="SHOES " />
+      <div class="product-name">YOHO Bliss Comfortable Slip On Semi Casual Loafer for Women | Stylish Fashion Moccasins Range | Cushioned Footbed Finish | Flexible | Style & All-Purpose | Formal Office Wear Shoe</div>
+      <div class="product-price">Rs. 805.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 805.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61OC09NZ7BL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss Heel 002 Slip-on Loafers for Women | Comfortable & Stylish Block Heeled | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,593.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 1,593.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61CyECkg7AL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss Heel 002 Slip-on Loafers for Women | Comfortable & Stylish Block Heeled | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,593.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,593.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71BnYCo28rL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss Heel 001 Slip-on Loafers for Women | Comfortable & Stylish Block Heeled | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,593.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,593.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61KFpeBTLKL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO Bliss 003 Slip-on Loafers for Women | Comfortable & Stylish Flat | Fashion Moccasins with Footpharma Footbed | Perfect for Casual, Formal Shoe</div>
+      <div class="product-price">Rs. 1,483.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,483.00</div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="explore-section">
+<div class="explore-title">EXPLORE OUR LATEST SNEAKERS</div>
+
+  <div class="product-grid">
+     <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <pre>                       </pre>
+      <img src="https://m.media-amazon.com/images/I/6100HnFrzNL._AC_UL480_FMwebp_QL65_.jpg" alt="SHOES" />
+      <pre>                       </pre>
+      <pre>                       </pre>
+      <div class="product-name">AVANT Womens MagiX Running and Training Shoes</div>
+      <div class="product-price">Rs. 999.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 999.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <pre>                       </pre>
+      <img src="https://m.media-amazon.com/images/I/71KkK5u4oIL._AC_UL480_FMwebp_QL65_.jpg" alt="SHOES" />
+      <pre>                       </pre>
+      <pre>                       </pre>
+      <div class="product-name">Casual Sneaker Shoes for Women | Soft Cushioned Insole</div>
+      <div class="product-price">Rs. 645.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 645.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/61Wd8QQHkqL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">YOHO CAS 109 Sneakers for Women | Effortless Style |</div>
+      <div class="product-price">Rs. 1,650.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,650.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71bcKADXtSL._SY695_.jpg" alt="SHOES " />
+      <div class="product-name">Memory Foam Insole & Lightweight Eva Sole for All-Day Comfort Slip On Shoes Woman</div>
+      <div class="product-price">Rs. 999.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 999.00</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <pre>                       </pre>
+      <img src="https://m.media-amazon.com/images/I/71BR2EQFZTL._AC_UL480_FMwebp_QL65_.jpg" alt="SHOES" />
+      <pre>                       </pre>
+      <pre>                       </pre>
+      <div class="product-name">ASIAN Women's FIREFLY-09 Sports Running,Walking,Gym Shoes with Max Cushion Technology Lightweight Eva Sole with Memory Foam Insole Casual Sneaker Shoes for Women's & Girl's</div>
+      <div class="product-price">Rs. 749.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 749.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/71auKZlvo-L._SY695_.jpg" alt="SHOES" />
+      <pre>                       </pre>
+      <pre>                       </pre>
+      <div class="product-name">ASIAN Women NANCY-03 Sneakers and Casual wear Shoes with Laces, Lightweight and Comfortable Shoes for Parties, as Well as Gym and Sports for Women & Girls with Stylish Design</div>
+      <div class="product-price">Rs. 799.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 799.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://m.media-amazon.com/images/I/51gjc+cAWYL._SY695_.jpg" alt="SHOES" />
+      <div class="product-name">Shoetopia Women's Casual Walking Sneakers || Comfortable Lightweight Lace Comfy Travel & College</div>
+      <div class="product-price">Rs. 499.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 499.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <pre>                       </pre>
+      <img src="https://m.media-amazon.com/images/I/61OByhVu7kL._SY695_.jpg" alt="SHOES" />
+      <pre>                       </pre>
+      <pre>                       </pre>
+      <div class="product-name">YOHO Classic Sneakers for Women | Cushioned Insole | Anti-Skid | Casual Shoes</div>
+      <div class="product-price">Rs. 929.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 929.00</div>
+    </div>
+    
+  </div>
+</div>
+
+  <!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+  <!-- Footer -->
+  <footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+    <div class="container">
+      <div class="row mb-5 gy-4">
+        <!-- Subscribe -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5>Subscribe to receive exciting offers!</h5>
+          <form class="d-flex mt-3">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-envelope"></i>
+            </button>
+          </form>
+          <div class="mt-4 text-white">
+            <strong>DEMIFINE FASHION PVT LTD</strong>
+            <p style="font-size: 14px;">
+              <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No.
+              5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+              <i class="bi bi-telephone"></i> +91 0000005645<br>
+              <i class="bi bi-envelope"></i> xyz@gmail.com
+            </p>
+          </div>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Policy -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Policy</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+            <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Help</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+          </ul>
+        </div>
+
+        <!-- Vertical Divider (Large screens only) -->
+        <div class="d-none d-lg-block col-lg-1">
+          <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+        </div>
+
+        <!-- About Us -->
+        <div class="col-lg-2 col-md-6 col-12">
+          <h5>About Us</h5>
+          <ul class="list-unstyled small">
+            <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+            <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Horizontal line -->
+      <hr class="border-light mb-4">
+
+      <!-- Bottom Row -->
+      <div class="row align-items-center text-center text-md-start gy-3">
+        <div class="col-md-4">
+          <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+          <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0 small">All Rights Reserved © Raghita</p>
+          <p class="mb-0 small">Annual Returns 2025–26</p>
+        </div>
+        <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;"
+            alt="Paytm">
+          <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;"
+            alt="Google Pay">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;"
+            alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;"
+            alt="Paypal">
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+      <a href="#" class="btn btn-outline-light btn-lg me-2">
+        <i class="bi bi-apple"></i> Download
+      </a>
+      <a href="#" class="btn btn-outline-light btn-lg">
+        <i class="bi bi-google-play"></i> Download
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

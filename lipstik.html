@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+
+    h2 {
+      color: #001f3f;
+      margin-bottom: 20px;
+      margin-top: 3rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .format-section,
+    .color-section {
+      margin-bottom: 60px;
+    }
+
+    .format-cards,
+    .color-circles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .format-card {
+      width: 150px;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .format-card:hover {
+      transform: scale(1.05);
+    }
+
+    .color-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .color-circle:hover {
+      transform: scale(1.05);
+    }
+
+    .Pinks { background: url('https://images-static.naikaa.com/beauty-blog/wp-content/uploads/2018/09/How-To-Pick-THE-Perfect-Pink-Lipstick-For-Your-Skin-Tone-1.jpg') center/cover; }
+    .Nudes { background: url('https://tse2.mm.bing.net/th/id/OIP.JE7JUHwzEP0i0uzZKVQt1gHaEJ?pid=ImgDet&w=184&h=103&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+    .Reds { background: url('https://tse1.mm.bing.net/th/id/OIP.bCA8ACZWkWwX441T33BwuwAAAA?pid=ImgDet&w=184&h=325&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+    .Browns { background: url('https://tse1.explicit.bing.net/th/id/OIP.UCAms3p8TpVmF7qwDrVtjQHaLL?pid=ImgDet&w=184&h=278&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+    .Corals { background: url('https://tse1.explicit.bing.net/th/id/OIP.FVIKgph6PV2rKdmM14SCsAHaE8?pid=ImgDet&w=184&h=122&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+    .Maroon { background: url('https://tse2.mm.bing.net/th/id/OIP._RNHxwqeKtxXNYFv2A62EAHaEJ?pid=ImgDet&w=184&h=103&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+    .Plums { background: url('https://tse1.mm.bing.net/th/id/OIP.Q4udzPF_JZtwH-YUmKPAfAHaFj?pid=ImgDet&w=184&h=138&c=7&dpr=1.3&o=7&rm=3') center/cover; }
+
+    .Lipstick { background-image: url('https://th.bing.com/th/id/OIP.OnVcX5XIrtxPTC0mHyIVFgHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'); }
+    .Liquid-Lipstick { background-image: url('https://th.bing.com/th/id/OIP.tRvmNzGZVTFde5vjjo6-wAHaHa?w=189&h=189&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'); }
+    .Lip-Tints { background-image: url('https://th.bing.com/th/id/OIP.yfK-l5q4LbD9YMN1dTT-swHaLG?w=145&h=216&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'); }
+    .Lip-Gloss { background-image: url('https://th.bing.com/th/id/OIP.bSyKPGaSyxVwur1PZDbSLwHaHX?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'); }
+    .Lip-Crayons { background-image: url('https://th.bing.com/th/id/OIP.X10gfVgsXL4_d65XrIXMrAHaEJ?w=317&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'); }
+    .Lip-Liners { background-image: url('https://th.bing.com/th/id/OIP.6wu6Iiu6_DHfexzohvR0LwHaHx?w=148&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'); }
+    
+        .explore-section {
+      padding: 40px 60px;
+      background-color: #e9eff1;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px);
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%;
+      }
+    }
+
+    </style>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ 
+  <div class="container">
+    <!-- Shop by Format -->
+    <div class="format-section">
+      <h2>Shop By Format</h2>
+      <div class="format-cards">
+        <div class="format-card Lipstick">Lipstick</div>
+        <div class="format-card Liquid-Lipstick">Liquid<br>Lipstick</div>
+        <div class="format-card Lip-Tints">Lip Tints</div>
+        <div class="format-card Lip-Gloss">Lip Gloss/<br>Oil</div>
+        <div class="format-card Lip-Crayons">Lip Crayons</div>
+        <div class="format-card Lip-Liners">Lip Liners</div>
+      </div>
+    </div>
+
+    <!-- Shop by Colour -->
+    <div class="color-section">
+      <h2>Shop By Colour</h2>
+      <div class="color-circles">
+        <div class="color-circle Pinks">Pinks</div>
+        <div class="color-circle Nudes">Nudes</div>
+        <div class="color-circle Reds">Reds</div>
+        <div class="color-circle Browns">Browns</div>
+        <div class="color-circle Corals">Corals</div>
+        <div class="color-circle Maroon">Maroon</div>
+        <div class="color-circle Plums">Plums</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!--CARDS-->
+<div class="explore-section" id="lip">
+  <div class="explore-title">LIPSTICKS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.EjH3DGvbj%2flkCw474C474&w=160&h=220&c=17&dpr=1.3&pid=21.1" alt="Bundle" />
+      <div class="product-name">Christian Dior Rouge Dior Couture Colour Velvet & Satin Finishes Lipstick</div>
+      <div class="product-price">Rs. 4,566.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,566.00</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.uy2g29BSVsof1w474C474?w=220&h=220&c=17&o=5&dpr=1.3&pid=21.1" alt="Glossy Balm" />
+      <div class="product-name">CAL Losangeles Rose Collection Bullet Lipstick 5 G -Tempt</div>
+      <div class="product-price">Rs. 245.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 245.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.lzGFHt7HInENGg474C474?w=220&h=220&c=17&o=5&dpr=1.3&pid=21.1" alt="Eyeshadow" />
+      <div class="product-name">7EVEN Sensual HD Creamy Matte Bullet Lipstick- 4.8 G- Dark Lady 52</div>
+      <div class="product-price">Rs. 461.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 461.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.PEWR1yeFdpeBNQ474C474?w=220&h=220&c=17&o=5&dpr=1.3&pid=21.1" alt="Glow Stick" />
+      <div class="product-name">Colorbarsinful Matte Lipcolor - Long Lasting Lipstick - Creamy Matte Lipstick Hydrate Lips</div>
+      <div class="product-price">Rs. 2,234.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,234.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.r4NAZ3%2f%2fdjjdOg474C474&w=160&h=220&c=17&dpr=1.3&pid=21.1" alt="Lipstick" />
+      <div class="product-name">Giorgio Armani Lip Power Matte Longwear</div>
+      <div class="product-price">Rs. 3,752.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 1,050.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.duAR6D4KZIUnOQ474C474?w=160&h=220&c=17&dpr=1.3&pid=21.1" alt="Highlighter" />
+      <div class="product-name">Charlotte Tilbury Matte Revolution Refillable Lipstick</div>
+      <div class="product-price">Rs. 3,571.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 3,571.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.rwAYibe0hbtrUg474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Nykaa Ultra Matte Lipstick In Shade 13 Victoria</div>
+      <div class="product-price">Rs. 3,525.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,525.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.xFtl6JdUKj815g474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">FACESCANADA Weightless Matte Finish Lipstick Divine Mauve</div>
+      <div class="product-price">Rs. 2,630.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,630.00</div>
+    </div>
+
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section" id="liq">
+  <div class="explore-title">LIQUED LIPSTICKS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="data:image/webp;base64,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" alt="Bundle" />
+      <div class="product-name">Maybelline Super Stay Matte Ink Liquid Lipstick</div>
+      <div class="product-price">Rs. 472.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 472.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/22133744002.jpg" alt="Glossy Balm" />
+      <div class="product-name">Lipstick Queen Famous Last Words Liquid Lipstick</div>
+      <div class="product-price">Rs. 2,152.00 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,152.00</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/24650081202.jpg" alt="Eyeshadow" />
+      <div class="product-name">PUR (PurMinerals)Velvet Matte Liquid Lipstick</div>
+      <div class="product-price">Rs. 1,763.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,763.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/22952442702.jpg" alt="Glow Stick" />
+      <div class="product-name">Laura GellerLuscious Lips Liquid Lipstick</div>
+      <div class="product-price">Rs. 1,572.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,572.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/26568480102.jpg" alt="Lipstick" />
+      <div class="product-name">Christian Dior Rouge Dior Forever Matte Liquid Lipstick</div>
+      <div class="product-price">Rs. 4,430.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 4,430.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27880102802.jpg" alt="Highlighter" />
+      <div class="product-name">Kylie By Kylie Jenner Matte Liquid Lipstick</div>
+      <div class="product-price">Rs. 1,808.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,808.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/21971096802-2.jpg" alt="Blush" />
+      <div class="product-name">Smashbox Always On Liquid Lipstick</div>
+      <div class="product-price">Rs. 2,622.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,622.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27933693702.jpg" alt="Blush" />
+      <div class="product-name">BareMinerals Mineralist Lasting Matte Liquid Lipstick</div>
+      <div class="product-price">Rs. 1,880.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,880.00</div>
+    </div>
+
+  </div>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">LIP TINT</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27823680102.jpg" alt="Bundle" />
+      <div class="product-name">Christian Dior Dior Addict Lip Tint</div>
+      <div class="product-price">Rs. 4,250.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,250.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/34731282402.jpg" alt="Glossy Balm" />
+      <div class="product-name">Tatcha The Kissu Lip Tint</div>
+      <div class="product-price">Rs. 2,984.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,984.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/32211926502.jpg" alt="Eyeshadow" />
+      <div class="product-name">Bobbi Brown Extra Lip Tint</div>
+      <div class="product-price">Rs. 3,617.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,617.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/32595280102.jpg" alt="Glow Stick" />
+      <div class="product-name">Christian Dior Dior Addict Lip Glow Reviving Lip Balm</div>
+      <div class="product-price">Rs. 4,150.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,150.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27949380402.jpg" alt="Lipstick" />
+      <div class="product-name">MORACO Lip Color</div>
+      <div class="product-price">Rs. 2,848.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 2,848.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/33308024702.jpg" alt="Highlighter" />
+      <div class="product-name">Laura Mercier High Vibe Lip Color</div>
+      <div class="product-price">Rs. 1,200.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,200.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/25363200202.jpg" alt="Blush" />
+      <div class="product-name">Benefit Gogotint Lip & Cheek Stain</div>
+      <div class="product-price">Rs. 2,336.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,336.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/34731182402.jpg" alt="Blush" />
+      <div class="product-name">Tatcha The Kissu Lip Tint</div>
+      <div class="product-price">Rs. 1,259.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,259.00</div>
+    </div>
+
+  </div>
+</div>
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">LIP GLOSS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.KY8CWHFQCc2gWQ474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Bundle" />
+      <div class="product-name">Dior Addict Lip Maximizer Plumping Gloss</div>
+      <div class="product-price">Rs. 8,472.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 8,472.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/22953442702.jpg" alt="Glossy Balm" />
+      <div class="product-name">Laura Geller Color Drenched Lip Gloss</div>
+      <div class="product-price">Rs. 1,404.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,404.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27342903602.jpg" alt="Eyeshadow" />
+      <div class="product-name">Jane Iredale HydroPure Hyaluronic Lip Gloss</div>
+      <div class="product-price">Rs. 2,251.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,251.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.gKlYEuL513PQLQ474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Glow Stick" />
+      <div class="product-name">ANASTASIA BEVERLY HILLS Long-Lasting Lip Gloss</div>
+      <div class="product-price">Rs. 2,300.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,300.00</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.B1xSDahorIx6yA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Lipstick" />
+      <div class="product-name">SEPHORA COLLECTION Glossed Lip Gloss 1 Boss</div>
+      <div class="product-price">Rs. 3,848.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 3,848.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.LFabFVwA0umGIA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Highlighter" />
+      <div class="product-name">ANASTASIA BEVERLY HILLS Diamond Lip Gloss - Honey</div>
+      <div class="product-price">Rs. 1,380.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 1,380.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.wigmYXxas3nMbQ474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Biotique Diva Shine Lip Gloss - Naughty Nude</div>
+      <div class="product-price">Rs. 336.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 336.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.Rjm1L4%2bCrKeOAA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">E.L.F. Cosmetics Lip Plumping Gloss - Mocha Twist</div>
+      <div class="product-price">Rs. 859.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 859.00</div>
+    </div>
+
+  </div>
+</div>
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">LIP CRAYON</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.AL%2b1qjF%2fMmtyGA474C474&w=160&h=220&c=17&dpr=1.3&pid=21.1" alt="Bundle" />
+      <div class="product-name">Glo Skin Beauty Suede Matte Lip Crayon</div>
+      <div class="product-price">Rs. 1,830.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,830.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/24481680602.jpg" alt="Glossy Balm" />
+      <div class="product-name">Surratt Beauty Automatique Lip Crayon</div>
+      <div class="product-price">Rs. 3,666.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,666.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.WpepNK8yrXVNIg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Eyeshadow" />
+      <div class="product-name">Fashion Colour Glossip Non Transfer Matte Lip Crayon - 3 G - Pink Sugar</div>
+      <div class="product-price">Rs. 849.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 849.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.dAe36CB169k2ow474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Glow Stick" />
+      <div class="product-name">Fashion Colour Women Brown Waterproof Long Lasting Ultra Matte Lip Crayon - Mauve It 25</div>
+      <div class="product-price">Rs. 391.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 391.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.cFU%2fJj4OrgbJOw474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Lipstick" />
+      <div class="product-name">W Pink Lip Crayon-Charming</div>
+      <div class="product-price">Rs. 550.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 550.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.T%2bFfyMLWQihwXQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Highlighter" />
+      <div class="product-name">Bite Beauty Power Move Matte Lip Crayon - Cognac - Red Brown</div>
+      <div class="product-price">Rs. 7,406.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 7,406.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.mKbJx%2fDKfevn0g474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Kay Beauty Matteinee Matte Lip Crayon Lipstick - Climax (Red)</div>
+      <div class="product-price">Rs. 636.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 636.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.%2bUdYUn06phm3CA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Juice Beauty PHYTO-PIGMENTS Luminous Lip Crayon 3.1G </div>
+      <div class="product-price">Rs. 2,259.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,259.00</div>
+    </div>
+
+  </div>
+</div>
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">LIP LINERS</div>
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10% off</span>
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.cz7tVhVWLjUrtQ474C474?w=592&h=550&qlt=20&o=5&dpr=1.3&pid=21.1" alt="Bundle" />
+      <div class="product-name">SWISSBEAUTY Bold Matt Lip Liner | Long-Lasting |Matte Finish | Non-Drying | Shade-13</div>
+      <div class="product-price">Rs. 1.908.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 1,908.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.kkYw4rs4Uoj%2foQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Glossy Balm" />
+      <div class="product-name">Divineskin & Cosmetics - Lip Liner Pencil - Waterproof Gel Lip Liner - Kiss Proof</div>
+      <div class="product-price">Rs. 2,345.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,345.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.gehZL2NL0CxPGw474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Eyeshadow" />
+      <div class="product-name">MARS Matte Lip Liner | One Swipe Smooth Application | Long Lasting</div>
+      <div class="product-price">Rs. 84.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 84.00</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27466290602.jpg" alt="Glow Stick" />
+      <div class="product-name">Charlotte Tilbury Lip Cheat Lip Liner Pencil</div>
+      <div class="product-price">Rs. 2,391.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 2,391.87</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.hMnBqnpnoZfAtg474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Lipstick" />
+      <div class="product-name">KAY BEAUTY Matte Action Lip Liner - Hype</div>
+      <div class="product-price">Rs. 649.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 649.00</div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.v90G7UrkudE6qA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Highlighter" />
+      <div class="product-name">Colorbar Definer Lip Liner - Clear Red At Nykaa, Best Beauty Products Online At NYKAA</div>
+      <div class="product-price">Rs. 489.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 489.00</div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.VzjyPMlmwzMQlA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Catrice Plumping Lip Liner 060 Cheers To Life 0.35G</div>
+      <div class="product-price">Rs. 313.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 313.00</div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.382RwXET1q8LtQ474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Swiss Beauty Bold Matt Lip Liner - Perfect Maroon</div>
+      <div class="product-price">Rs. 59.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 59.00</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>

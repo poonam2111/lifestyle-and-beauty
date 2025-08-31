@@ -1,0 +1,570 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #3f1f1f;
+    }
+
+    .sbtn {
+      background: #4ead97;
+      color: aliceblue;
+    }
+    .carousel-item video {
+      width: 100%;
+      height: 500px; /* Adjust height as needed */
+      object-fit: cover;
+    }
+
+    body {
+      background-color: #e9eff1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .explore-section {
+      padding: 40px 60px;
+    }
+
+    .explore-title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #5d2727;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .product-card {
+      flex: 0 0 calc(25% - 15px); /* 4 per row */
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .badge {
+      background-color: #dfe3e6;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .add-btn {
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        flex: 0 0 calc(50% - 10px); /* 2 per row on tablet */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        flex: 0 0 100%; /* 1 per row on mobile */
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .promo-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #7e6b91; /* Lavender purple */
+      color: white;
+      padding: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+    }
+
+    .promo-text {
+      max-width: 50%;
+    }
+
+    .promo-text h1 {
+      font-size: 32px;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
+    .promo-text p {
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
+
+    .promo-text small {
+      font-size: 12px;
+      display: block;
+      margin-top: 10px;
+      color: #e0dce8;
+    }
+
+    .promo-btn {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .promo-image {
+      position: relative;
+      max-width: 45%;
+    }
+
+    .promo-image img {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .promo-value {
+      position: absolute;
+      top: 10%;
+      right: -20px;
+      background-color: #6b5a85;
+      color: white;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 768px) {
+      .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .promo-text, .promo-image {
+        max-width: 100%;
+      }
+
+      .promo-image {
+        margin-top: 20px;
+      }
+
+      .promo-value {
+        top: -20px;
+        right: 20px;
+      }
+    }
+    </style>
+
+    </head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <img src="ragita2.png" alt="logo" height="10%" width="10%">
+      <div class="ms-auto">
+        <ul class="navbar-nav d-flex flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="bodycare.html">BodyCare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="lifestyle.html">LifeStyle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="Accessories.html">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-semibold" href="contact.php">Contact</a>
+          </li>
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="sbtn" type="submit">Search</button>
+            </form>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--SLIDEBAR VEDIO-->
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="d-block w-100" autoplay loop muted playsinline>
+        <source src="270065_small.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="carousel-item">
+      <video class="d-block w-100" autoplay loop muted playsinline>
+        <source src="makeup.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="carousel-item">
+      <video class="d-block w-100" autoplay loop muted playsinline>
+        <source src="Super.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--CARDS-->
+<div class="explore-section">
+  <div class="explore-title">EXPLORE OUR LATEST FOUNDATIONS</div>
+
+  <div class="product-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <span class="badge">10%off</span>
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.Hb5qn2zR8bhttQ474C474?w=140&h=140&c=17&dpr=1.3&pid=21.1" alt="Bundle" />
+      <div class="product-name">Coloressence COLORESSENCE HD Foundation</div>
+      <div class="product-price">Rs. 472.44 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 472.44</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.%2fuwM7EmTpJxP1Q474C474&w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Glossy Balm" />
+      <div class="product-name">Swiss Beauty Studio Finish Full Coverage Foundation</div>
+      <div class="product-price">Rs. 616.21 | 10 shades ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 616.21</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OIP.4nqHppNGRiBH9lBZAnSaDgHaHa?w=194&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Eyeshadow" />
+      <div class="product-name">Maybelline Fit Me Dewy Smooth Foundation - Homecare24</div>
+      <div class="product-price">Rs. 849.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 849.87</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.rRsXrX6fR6H%2bmA474C474&w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Glow Stick" />
+      <div class="product-name">Swiss Beauty Airbrush Finish Full Coverage Foundation</div>
+      <div class="product-price">Rs. 391.87 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 391.87</div>
+    </div>
+
+    <!-- NEW CARD 5 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.xwGp5JxIPWwLhQ474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Lipstick" />
+      <div class="product-name">Fashion Colour Pro Matte Liquid Foundation (Shade-Latte) - 30Ml</div>
+      <div class="product-price">Rs. 1,050.00 | ⭐ 4.8</div>
+      <div class="add-btn">ADD TO BAG RS. 1,050.00</div>
+    </div>
+
+    <!-- NEW CARD 6 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.iQiateKhMMkTCg474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Highlighter" />
+      <div class="product-name">MARS SPF30 PA++++ Zero Blend Weightless Foundation For Makeup</div>
+      <div class="product-price">Rs. 406.00 | ⭐ 4.7</div>
+      <div class="add-btn">ADD TO BAG RS. 4006.00</div>
+    </div>
+
+    <!-- NEW CARD 7 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.FafQwfcYWOU5Kg474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Colors Queen Oil Control Base Foundation Natural 2 -30Ml</div>
+      <div class="product-price">Rs. 336.00 | ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 336.00</div>
+    </div>
+ <!-- NEW CARD 8 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.2fwYBlpg12lznA474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Maybelline New York Fit Me Matte Poreless Liquid Foundation 128 Warm</div>
+      <div class="product-price">Rs. 259.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 259.00</div>
+    </div>
+<!-- NEW CARD 9 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/25951002602.jpg" alt="Blush" />
+      <div class="product-name">NARS Natural Radiant Longwear Foundation</div>
+      <div class="product-price">Rs. 4,501.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,501.00</div>
+    </div>
+    <!-- NEW CARD 10 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/34720924702.jpg" alt="Blush" />
+      <div class="product-name">Laura Mercier Real Flawless Weightless Perfecting Foundation</div>
+      <div class="product-price">Rs. 4,420.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,420.00</div>
+    </div>
+    <!-- NEW CARD 11 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/25604183002.jpg" alt="Blush" />
+      <div class="product-name">MAC Studio Waterweight Foundation SPF 30</div>
+      <div class="product-price">Rs. 4,924.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 4,924.00</div>
+    </div>
+    <!-- NEW CARD 12 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/23895713602.jpg" alt="Blush" />
+      <div class="product-name">Make Up For Ever Matte Velvet Skin Full Coverage Foundation</div>
+      <div class="product-price">Rs. 3,847.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,847.00</div>
+    </div>
+    <!-- NEW CARD 13 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://a.cdnsbn.com/images/products/l/27111326602.jpg" alt="Blush" />
+      <div class="product-name">Lavera Hyaluron Liquid Foundation</div>
+      <div class="product-price">Rs.2,661.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS.2,661.00</div>
+    </div>
+    <!-- NEW CARD 14 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.v8DVLkMnflGIjA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Huda Beauty Easy Blur Natural Airbrush Lightweight Foundation</div>
+      <div class="product-price">Rs.3,380.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,380.00</div>
+    </div>
+    <!-- NEW CARD 15 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th/id/OPAC.ayar4DVmowXZyA474C474?w=592&h=550&qlt=20&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">Bobbi Brown Weightless Skin Foundation SPF15</div>
+      <div class="product-price">Rs. 3,999.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 3,999.00</div>
+    </div>
+    <!-- NEW CARD 16 -->
+    <div class="product-card">
+      <span class="badge">new</span>
+      <img src="https://th.bing.com/th?id=OPAC.n6OqvbQt65a%2fFA474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1" alt="Blush" />
+      <div class="product-name">BH Cosmetics Studio Pro HD Foundation - Color 120</div>
+      <div class="product-price">Rs. 6,153.00| ⭐ 4.9</div>
+      <div class="add-btn">ADD TO BAG RS. 6,153.00</div>
+    </div>
+  </div>
+</div>
+
+<!--COOKIES-->
+<div class="promo-banner">
+    <div class="promo-text">
+      <h1>FREE COOKIES FOR FULL COVERAGE</h1>
+      <p>lipstick for that last touch after your glam look $80+ orders.</p>
+      <a href="#" class="promo-btn">GET COOKIES N FACE GLOW</a>
+      <small>Ends July 18, while supplies last. Exclusions apply.</small>
+    </div>
+    <div class="promo-image">
+      <img src="lipstick - Copy.png" alt="Cookies N Clean Face Scrub" />
+      <div class="promo-value">$34<br>VALUE</div>
+    </div>
+  </div>
+<!-- Back to Top Button -->
+<a href="#top" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-4" style="z-index:999;">
+  ↑ Top
+</a>
+<!-- Footer -->
+<footer style="background-color: rgb(10, 2, 41); color: rgb(165, 78, 7); padding: 40px 0;">
+  <div class="container">
+    <div class="row mb-5 gy-4">
+      <!-- Subscribe -->
+      <div class="col-lg-3 col-md-6 col-12">
+        <h5>Subscribe to receive exciting offers!</h5>
+        <form class="d-flex mt-3">
+          <input type="email" class="form-control me-2" placeholder="Your email address">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-envelope"></i>
+          </button>
+        </form>
+        <div class="mt-4 text-white">
+          <strong>DEMIFINE FASHION PVT LTD</strong>
+          <p style="font-size: 14px;">
+            <i class="bi bi-geo-alt"></i> Office No. A101/A102, S N - 26/2B, Kensination Court, P. No - 345, Lane No. 5, Koregaon Park, Pune, Maharashtra, India, 411001.<br>
+            <i class="bi bi-telephone"></i> +91 0000005645<br>
+            <i class="bi bi-envelope"></i> xyz@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Policy -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Policy</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">Shipping & Delivery</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Return & Exchange</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Lifetime Warranty</a></li>
+          <li><a href="#" class="text-white text-decoration-none">BuyBack Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Payment Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Grievance Redressal</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- Help -->
+      <div class="col-lg-2 col-md-6 col-6">
+        <h5>Help</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="text-white text-decoration-none">FAQ's</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Vertical Divider (Large screens only) -->
+      <div class="d-none d-lg-block col-lg-1">
+        <div style="border-left: 3px solid rgb(165, 78, 7); height: 100%;"></div>
+      </div>
+
+      <!-- About Us -->
+      <div class="col-lg-2 col-md-6 col-12">
+        <h5>About Us</h5>
+        <ul class="list-unstyled small">
+          <li><a href="services..html" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="skincare.html" class="text-white text-decoration-none">Skincare</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="lifestyle.html" class="text-white text-decoration-none">Stores</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="border-light mb-4">
+
+    <!-- Bottom Row -->
+    <div class="row align-items-center text-center text-md-start gy-3">
+      <div class="col-md-4">
+        <a href="#"><i class="bi bi-facebook text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-instagram text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-linkedin text-white fs-4 me-3"></i></a>
+        <a href="#"><i class="bi bi-youtube text-white fs-4"></i></a>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-0 small">All Rights Reserved © Raghita</p>
+        <p class="mb-0 small">Annual Returns 2025–26</p>
+      </div>
+      <div class="col-md-4 text-md-end text-center" style="cursor: pointer;">
+        <img src="https://img.icons8.com/color/48/000000/paytm.png" style="height: 30px; margin-left: 10px;" alt="Paytm">
+        <img src="https://img.icons8.com/color/48/000000/google-pay.png" style="height: 30px; margin-left: 10px;" alt="Google Pay">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" style="height: 30px; margin-left: 10px;" alt="Visa">
+        <img src="https://img.icons8.com/color/48/000000/paypal.png" style="height: 30px; margin-left: 10px;" alt="Paypal">
+      </div>
+    </div>
+  </div>
+<!-- button -->
+  <div class="col-12 d-flex justify-content-center gap-3" style="padding-top: 17px;">
+        <a href="#" class="btn btn-outline-light btn-lg me-2">
+          <i class="bi bi-apple"></i> Download
+        </a>
+        <a href="#" class="btn btn-outline-light btn-lg">
+          <i class="bi bi-google-play"></i> Download
+        </a>
+      </div>
+
+</footer>
+
+</body>
+</html>
