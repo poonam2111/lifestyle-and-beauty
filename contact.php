@@ -93,7 +93,7 @@
       <div class="ms-auto">
         <ul class="navbar-nav d-flex flex-row gap-4">
           <li class="nav-item">
-            <a class="nav-link text-white fw-semibold" href="Home.html">SkinCare</a>
+            <a class="nav-link text-white fw-semibold" href="index.html">SkinCare</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white fw-semibold" href="Makeup.html">Makeup</a>
